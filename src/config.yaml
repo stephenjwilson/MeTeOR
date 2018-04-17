@@ -1,0 +1,2 @@
+general: {datadir: ../data/, networkdir: ../results/networks/, resultsdir: ../results/, title: MeTeOR}
+mapping: {mappingdir: ../data/mapping}
