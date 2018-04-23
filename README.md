@@ -21,7 +21,7 @@ There is a [shell script file](src/pipeline.sh) that can be run to assemble MeTe
 #### Time and memory
  - Time
 	 - PubMed Data: This data takes a very long time (2-3 days) depending on download speeds to obtain from PubMed using the script provided. However, this script downloads in a query specific manner, allowing the user to customize the query. For bulk download, this project can also be modified to run on [the NLM bulk downloads](https://www.nlm.nih.gov/databases/download/pubmed_medline.html). We provide a basic [python script](MEDLINE/downloadMEDLINE.py) to download this data.
-	 - The Non-negative Matrix Factorization (NMF) conducted in the analysis part of the pipeline and run in MATLAB can be very time and memory intensive. If you chose to, you can download [pre-computed results
+	 - The Non-negative Matrix Factorization (NMF) conducted in the analysis part of the pipeline and run in MATLAB can be very time and memory intensive. If you chose to, you can download [pre-computed results](#raw-data-and-results) to greatly increase the speed of analysis. All code was run on an intel i7
 	 - 
 
 ### Running the whole pipeline
@@ -63,7 +63,7 @@ Navigate to the directory you wish to download, either data or results, and use:
 dat clone ./
 ```
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTE1NzU5MzYwOTIsLTEwMDI1MTY2NTYsMT
+eyJoaXN0b3J5IjpbLTE1MzA0MjM1NzMsLTEwMDI1MTY2NTYsMT
 EyMDU0MjQ4NCw1NzQzODQ5MjMsLTEwMDQ5NDgyNTcsMTAwNjk1
 MTg2MCwxMTUxMjA2NzEyLC0xNzQzNjU4NDIyLDEyMzE4ODM4Nj
 csLTE5MzY0MDAyMDEsLTExMzU2MDQ5M119
