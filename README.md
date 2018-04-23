@@ -15,10 +15,14 @@ This project is built off of python 3 for the creation of the MeTeOR network and
 A website serving the resulting network can be found [here](http://meteor.lichtargelab.org/).
 
 ## Running from Scratch
-There is a [shell script file](src/pipeline.sh) that can be run to assemble MeTeOR and to assess the resulting network. This may be relevant if you wish to have the latest PubMed articles or if you wish to modify some aspect of the creation process. For example, you could create a custom weighting process or create a subnetwork based only on a certain part of the literature.
+There is a [shell script file](src/pipeline.sh) that can be run to assemble MeTeOR and to assess the resulting network. This may be relevant if you wish to have the latest PubMed articles or if you wish to modify some aspect of the creation process. For example, you could create a custom weighting process or create a subnetwork based only on a certain part of the literature. From the src folder:
 ```bash
-
-
+./pipeline.sh
+```
+If necessary:
+```bash
+chmod +x ./pipeline.sh
+```
 
 ## Raw Data and Results
 To host the data and results of the project, I used [dat](https://datproject.org/) and [bulk downloads](http://meteor.lichtargelab.org/download).
@@ -38,7 +42,7 @@ Navigate to the directory you wish to download, either data or results, and use:
 dat clone ./
 ```
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbMjU2NTY1NjYwLC0xMDA0OTQ4MjU3LDEwMD
+eyJoaXN0b3J5IjpbOTAxMDU4NzcxLC0xMDA0OTQ4MjU3LDEwMD
 Y5NTE4NjAsMTE1MTIwNjcxMiwtMTc0MzY1ODQyMiwxMjMxODgz
 ODY3LC0xOTM2NDAwMjAxLC0xMTM1NjA0OTNdfQ==
 -->
