@@ -38,12 +38,10 @@ dat clone ./
 ### Running the whole pipeline
 From the src folder:
 ```bash
+chmod +x ./pipeline.sh
 ./pipeline.sh
 ```
-If necessary:
-```bash
-chmod +x ./pipeline.sh
-```
+
 ### Run the python part of the pipeline, generating and characterizing the network
 ```bash
 python main.py
@@ -74,7 +72,7 @@ Navigate to the directory you wish to download, either data or results, and use:
 dat clone ./
 ```
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbMTUzMzQ1NDgyOCw1NDYyNTUwMTUsMTA2Mj
+eyJoaXN0b3J5IjpbLTMyNjEwOTU4NCw1NDYyNTUwMTUsMTA2Mj
 I3MDYzMSw2NzI5NTMzOTgsLTEwMDI1MTY2NTYsMTEyMDU0MjQ4
 NCw1NzQzODQ5MjMsLTEwMDQ5NDgyNTcsMTAwNjk1MTg2MCwxMT
 UxMjA2NzEyLC0xNzQzNjU4NDIyLDEyMzE4ODM4NjcsLTE5MzY0
