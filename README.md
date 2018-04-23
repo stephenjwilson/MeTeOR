@@ -28,7 +28,8 @@ Other requirements:
 
  - [MATLAB](https://www.mathworks.com/products/matlab.html) (for prediction and network assessment)
  - [Graphviz](https://www.graphviz.org/) (for the network visualization)
- - [pyupset](https://github.com/ImSoErgodic/py-upset) (already provided in a modified version)
+
+[pyupset](https://github.com/ImSoErgodic/py-upset) is required but already provided in a modified version.
 
 #### Time, space, and memory
 
@@ -78,9 +79,9 @@ Navigate to the directory you wish to download, either data or results, and use:
 dat clone ./
 ```
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbNDAzMjgzNzAyLDU0NjI1NTAxNSwxMDYyMj
-cwNjMxLDY3Mjk1MzM5OCwtMTAwMjUxNjY1NiwxMTIwNTQyNDg0
-LDU3NDM4NDkyMywtMTAwNDk0ODI1NywxMDA2OTUxODYwLDExNT
-EyMDY3MTIsLTE3NDM2NTg0MjIsMTIzMTg4Mzg2NywtMTkzNjQw
-MDIwMSwtMTEzNTYwNDkzXX0=
+eyJoaXN0b3J5IjpbLTE1NTkwMTY3NjIsNTQ2MjU1MDE1LDEwNj
+IyNzA2MzEsNjcyOTUzMzk4LC0xMDAyNTE2NjU2LDExMjA1NDI0
+ODQsNTc0Mzg0OTIzLC0xMDA0OTQ4MjU3LDEwMDY5NTE4NjAsMT
+E1MTIwNjcxMiwtMTc0MzY1ODQyMiwxMjMxODgzODY3LC0xOTM2
+NDAwMjAxLC0xMTM1NjA0OTNdfQ==
 -->
