@@ -1,5 +1,5 @@
 # MeTeOR
-This project is built off of python 3 for the creation of the MeTeOR network and MATLAB for the assessment of the network.
+This project is built off of python 3 for the creation of the MeTeOR network and MATLAB for the assessment of the network as well as the unsupervised link prediction.
 
 
 # Raw Data and Results
@@ -20,5 +20,5 @@ Navigate to the directory you wish to download, either data or results, and use:
 dat clone ./
 ```
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbNTExOTIxMTYsLTExMzU2MDQ5M119
+eyJoaXN0b3J5IjpbLTcyODIxMjM0MywtMTEzNTYwNDkzXX0=
 -->
