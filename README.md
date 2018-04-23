@@ -29,11 +29,11 @@ Other requirements:
  - [MATLAB](https://www.mathworks.com/products/matlab.html) (for prediction and network assessment)
  - [Graphviz](https://www.graphviz.org/) (for the network visualization)
 
-[pyupset](https://github.com/ImSoErgodic/py-upset) is required but already provided in a modified version.
+[pyupset](https://github.com/ImSoErgodic/py-upset) is required, but a modified version is already provided in this repository.
 
 #### Time, space, and memory
 
- - PubMed Data: This data takes a very long time (2-3 days) depending on download speeds to obtain from PubMed using the script provided. However, this script downloads in a query specific manner, allowing the user to customize the query. For bulk download, this project can also be modified to run on [the NLM bulk downloads](https://www.nlm.nih.gov/databases/download/pubmed_medline.html). We provide a basic [python script](MEDLINE/downloadMEDLINE.py) to download this data. The raw XML can take upwards of 200 GB of space.
+ - PubMed Data: The data takes a very long time to obtain from PubMed using the provided script, allow 2-3 days depending on download speedsHowever, this script downloads in a query specific manner, allowing the user to customize the query. For bulk download, this project can also be modified to run on [the NLM bulk downloads](https://www.nlm.nih.gov/databases/download/pubmed_medline.html). We provide a basic [python script](MEDLINE/downloadMEDLINE.py) to download this data. The raw XML can take upwards of 200 GB of space.
  - All code was run on an Intel® Core™ i7-4820K CPU @ 3.70GHz × 8 with 64 GB RAM. From start to finish, everything should complete within a week.
  - The Non-negative Matrix Factorization (NMF) conducted in the analysis part of the pipeline and run in MATLAB can be very time and memory intensive. If you chose to, you can download [pre-computed results](#raw-data-and-results) to greatly increase the speed of analysis.
 
@@ -79,10 +79,10 @@ Navigate to the directory you wish to download, either data or results, and use:
 dat clone ./
 ```
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbMTU2MTgzMzMzNiw4NzkyMjUwODIsLTE1NT
-kwMTY3NjIsLTMxNDI1OTMyMiw1NDYyNTUwMTUsMTA2MjI3MDYz
-MSw2NzI5NTMzOTgsLTEwMDI1MTY2NTYsMTEyMDU0MjQ4NCw1Nz
-QzODQ5MjMsLTEwMDQ5NDgyNTcsMTAwNjk1MTg2MCwxMTUxMjA2
-NzEyLC0xNzQzNjU4NDIyLDEyMzE4ODM4NjcsLTE5MzY0MDAyMD
-EsLTExMzU2MDQ5M119
+eyJoaXN0b3J5IjpbNjEyNDgxMDI1LDE1NjE4MzMzMzYsODc5Mj
+I1MDgyLC0xNTU5MDE2NzYyLC0zMTQyNTkzMjIsNTQ2MjU1MDE1
+LDEwNjIyNzA2MzEsNjcyOTUzMzk4LC0xMDAyNTE2NjU2LDExMj
+A1NDI0ODQsNTc0Mzg0OTIzLC0xMDA0OTQ4MjU3LDEwMDY5NTE4
+NjAsMTE1MTIwNjcxMiwtMTc0MzY1ODQyMiwxMjMxODgzODY3LC
+0xOTM2NDAwMjAxLC0xMTM1NjA0OTNdfQ==
 -->
