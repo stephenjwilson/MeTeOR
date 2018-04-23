@@ -19,8 +19,8 @@ There is a [shell script file](src/pipeline.sh) that can be run to assemble MeTe
 ### Notes before running the pipeline
 #### Requirements
 ```bash
-virtualenv meteor
-source meteor/bin/activate
+virtualenv meteor_env
+source meteor_env/bin/activate
 pip install -r src/requirements.txt
 ```
 #### Time, space, and memory
@@ -74,9 +74,9 @@ Navigate to the directory you wish to download, either data or results, and use:
 dat clone ./
 ```
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbMzUzODAxOTAwLDU0NjI1NTAxNSwxMDYyMj
-cwNjMxLDY3Mjk1MzM5OCwtMTAwMjUxNjY1NiwxMTIwNTQyNDg0
-LDU3NDM4NDkyMywtMTAwNDk0ODI1NywxMDA2OTUxODYwLDExNT
-EyMDY3MTIsLTE3NDM2NTg0MjIsMTIzMTg4Mzg2NywtMTkzNjQw
-MDIwMSwtMTEzNTYwNDkzXX0=
+eyJoaXN0b3J5IjpbMTUzMzQ1NDgyOCw1NDYyNTUwMTUsMTA2Mj
+I3MDYzMSw2NzI5NTMzOTgsLTEwMDI1MTY2NTYsMTEyMDU0MjQ4
+NCw1NzQzODQ5MjMsLTEwMDQ5NDgyNTcsMTAwNjk1MTg2MCwxMT
+UxMjA2NzEyLC0xNzQzNjU4NDIyLDEyMzE4ODM4NjcsLTE5MzY0
+MDAyMDEsLTExMzU2MDQ5M119
 -->
