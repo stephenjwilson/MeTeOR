@@ -41,12 +41,11 @@ From the src folder:
 chmod +x ./pipeline.sh
 ./pipeline.sh
 ```
-
-### Run the python part of the pipeline, generating and characterizing the network
+### Generating and characterizing the network
 ```bash
 python main.py
 ```
-### Run the assessment part of the pipeline, testing the network against other networks. Includes MATLAB code.
+### Run the assessment part of the pipeline
 ```bash
 cd matlabpipeline
 matlab -r pipeline
@@ -72,9 +71,9 @@ Navigate to the directory you wish to download, either data or results, and use:
 dat clone ./
 ```
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTMyNjEwOTU4NCw1NDYyNTUwMTUsMTA2Mj
-I3MDYzMSw2NzI5NTMzOTgsLTEwMDI1MTY2NTYsMTEyMDU0MjQ4
-NCw1NzQzODQ5MjMsLTEwMDQ5NDgyNTcsMTAwNjk1MTg2MCwxMT
-UxMjA2NzEyLC0xNzQzNjU4NDIyLDEyMzE4ODM4NjcsLTE5MzY0
-MDAyMDEsLTExMzU2MDQ5M119
+eyJoaXN0b3J5IjpbNTk5ODYyMjY3LDU0NjI1NTAxNSwxMDYyMj
+cwNjMxLDY3Mjk1MzM5OCwtMTAwMjUxNjY1NiwxMTIwNTQyNDg0
+LDU3NDM4NDkyMywtMTAwNDk0ODI1NywxMDA2OTUxODYwLDExNT
+EyMDY3MTIsLTE3NDM2NTg0MjIsMTIzMTg4Mzg2NywtMTkzNjQw
+MDIwMSwtMTEzNTYwNDkzXX0=
 -->
