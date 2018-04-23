@@ -27,7 +27,7 @@ pip install -r src/requirements.txt
 Other requirements:
 
  - [MATLAB](https://www.mathworks.com/products/matlab.html) (for prediction and network assessment)
- - [Graphviz](https://www.graphviz.org/) (for the network visualization) and [pygraphviz]()
+ - [Graphviz](https://www.graphviz.org/) (for the network visualization)
 
 [pyupset](https://github.com/ImSoErgodic/py-upset) is required but already provided in a modified version.
 
@@ -79,9 +79,9 @@ Navigate to the directory you wish to download, either data or results, and use:
 dat clone ./
 ```
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTMxNDI1OTMyMiw1NDYyNTUwMTUsMTA2Mj
-I3MDYzMSw2NzI5NTMzOTgsLTEwMDI1MTY2NTYsMTEyMDU0MjQ4
-NCw1NzQzODQ5MjMsLTEwMDQ5NDgyNTcsMTAwNjk1MTg2MCwxMT
-UxMjA2NzEyLC0xNzQzNjU4NDIyLDEyMzE4ODM4NjcsLTE5MzY0
-MDAyMDEsLTExMzU2MDQ5M119
+eyJoaXN0b3J5IjpbLTE1NTkwMTY3NjIsLTMxNDI1OTMyMiw1ND
+YyNTUwMTUsMTA2MjI3MDYzMSw2NzI5NTMzOTgsLTEwMDI1MTY2
+NTYsMTEyMDU0MjQ4NCw1NzQzODQ5MjMsLTEwMDQ5NDgyNTcsMT
+AwNjk1MTg2MCwxMTUxMjA2NzEyLC0xNzQzNjU4NDIyLDEyMzE4
+ODM4NjcsLTE5MzY0MDAyMDEsLTExMzU2MDQ5M119
 -->
