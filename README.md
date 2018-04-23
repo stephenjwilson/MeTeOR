@@ -29,6 +29,13 @@ chmod +x ./pipeline.sh
 ```bash
 python main.py
 ```
+### Run the assessment part of the pipeline, testing the network against other networks. Includes MATLAB code.
+```bash
+cd matlabpipeline
+matlab -r pipeline
+cd ../EGFR
+python runEGFR.py
+```
 
 ## Raw Data and Results
 To host the data and results of the project, I used [dat](https://datproject.org/) and [bulk downloads](http://meteor.lichtargelab.org/download).
@@ -48,7 +55,7 @@ Navigate to the directory you wish to download, either data or results, and use:
 dat clone ./
 ```
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbNzQ2ODcxNDIzLC0xMDA0OTQ4MjU3LDEwMD
+eyJoaXN0b3J5IjpbNTc0Mzg0OTIzLC0xMDA0OTQ4MjU3LDEwMD
 Y5NTE4NjAsMTE1MTIwNjcxMiwtMTc0MzY1ODQyMiwxMjMxODgz
 ODY3LC0xOTM2NDAwMjAxLC0xMTM1NjA0OTNdfQ==
 -->
