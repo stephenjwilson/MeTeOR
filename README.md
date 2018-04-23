@@ -20,7 +20,7 @@ There is a [shell script file](src/pipeline.sh) that can be run to assemble MeTe
 #### Requirements
 #### Time and memory
  - Time
-	 - PubMed Data: This data takes a very long time (2-3 days) depending on download speeds to obtain from PubMed using the script provided. However, this script downloads in a query specific manner, allowing the user to customize the query. For bulk download, that this project can be modified to run on see [the NLM download [page](https://www.nlm.nih.gov/databases/download/pubmed_medline.html].
+	 - PubMed Data: This data takes a very long time (2-3 days) depending on download speeds to obtain from PubMed using the script provided. However, this script downloads in a query specific manner, allowing the user to customize the query. For bulk download, that this project can be modified to run on see [the NLM download page](https://www.nlm.nih.gov/databases/download/pubmed_medline.html).
 	 - 
 
 ### Running the whole pipeline
@@ -62,8 +62,8 @@ Navigate to the directory you wish to download, either data or results, and use:
 dat clone ./
 ```
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTI0MDA4Mjk1MSwxMTIwNTQyNDg0LDU3ND
-M4NDkyMywtMTAwNDk0ODI1NywxMDA2OTUxODYwLDExNTEyMDY3
-MTIsLTE3NDM2NTg0MjIsMTIzMTg4Mzg2NywtMTkzNjQwMDIwMS
-wtMTEzNTYwNDkzXX0=
+eyJoaXN0b3J5IjpbLTEwMDI1MTY2NTYsMTEyMDU0MjQ4NCw1Nz
+QzODQ5MjMsLTEwMDQ5NDgyNTcsMTAwNjk1MTg2MCwxMTUxMjA2
+NzEyLC0xNzQzNjU4NDIyLDEyMzE4ODM4NjcsLTE5MzY0MDAyMD
+EsLTExMzU2MDQ5M119
 -->
