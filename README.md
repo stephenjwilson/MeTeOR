@@ -28,7 +28,7 @@ chmod +x ./pipeline.sh
 To host the data and results of the project, I used [dat](https://datproject.org/) and [bulk downloads](http://meteor.lichtargelab.org/download).
 ### Installing Node and dat
 To download data using dat, ensure node is installed and the version is higher than 4
-```
+```bash
 node -v
 ```
 If it needs to be installed got to their [website](https://nodejs.org/en/download/).
@@ -42,7 +42,7 @@ Navigate to the directory you wish to download, either data or results, and use:
 dat clone ./
 ```
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbOTAxMDU4NzcxLC0xMDA0OTQ4MjU3LDEwMD
-Y5NTE4NjAsMTE1MTIwNjcxMiwtMTc0MzY1ODQyMiwxMjMxODgz
-ODY3LC0xOTM2NDAwMjAxLC0xMTM1NjA0OTNdfQ==
+eyJoaXN0b3J5IjpbLTExOTc5NzY2NjUsLTEwMDQ5NDgyNTcsMT
+AwNjk1MTg2MCwxMTUxMjA2NzEyLC0xNzQzNjU4NDIyLDEyMzE4
+ODM4NjcsLTE5MzY0MDAyMDEsLTExMzU2MDQ5M119
 -->
