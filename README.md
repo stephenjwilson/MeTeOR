@@ -18,25 +18,42 @@ A website serving the resulting network can be found [here](http://meteor.lichta
 There is a [shell script file](src/pipeline.sh) that can be run to assemble MeTeOR and to assess the resulting network. This may be relevant if you wish to have the latest PubMed articles or if you wish to modify some aspect of the creation process. For example, you could create a custom weighting process or create a subnetwork based only on a certain part of the literature. 
 ### Notes before running the pipeline
 #### Requirements
-#### Time and memory
- - Time
-	 - PubMed Data: This data takes a very long time (2-3 days) depending on download speeds to obtain from PubMed using the script provided. However, this script downloads in a query specific manner, allowing the user to customize the query. For bulk download, that this project can be modified to run on see [the NLM download page](https://www.nlm.nih.gov/databases/download/pubmed_medline.html).
-	 - 
+For the python portion:
+```bash
+virtualenv meteor_env
+source meteor_env/bin/activate
+pip install -r src/requirements.txt
+```
+Other requirements:
 
+ - [MATLAB](https://www.mathworks.com/products/matlab.html) (for prediction and network assessment)
+ - [Graphviz](https://www.graphviz.org/) (for the network visualization) and [pygraphviz]()
+
+[pyupset](https://github.com/ImSoErgodic/py-upset) is required but already provided in a modified version.
+
+#### Time, space, and memory
+
+ - PubMed Data: This data takes a very long time (2-3 days) depending on download speeds to obtain from PubMed using the script provided. However, this script downloads in a query specific manner, allowing the user to customize the query. For bulk download, this project can also be modified to run on [the NLM bulk downloads](https://www.nlm.nih.gov/databases/download/pubmed_medline.html). We provide a basic [python script](MEDLINE/downloadMEDLINE.py) to download this data. The raw XML can take upwards of 200 GB of space.
+ - All code was run on an Intel® Core™ i7-4820K CPU @ 3.70GHz × 8 with 64 GB RAM. From start to finish, everything should complete within a week.
+ - The Non-negative Matrix Factorization (NMF) conducted in the analysis part of the pipeline and run in MATLAB can be very time and memory intensive. If you chose to, you can download [pre-computed results](#raw-data-and-results) to greatly increase the speed of analysis.
+
+#### Obtaining the data
+In order to run the pipeline or assemble the network, certain files are needed. These are available as discussed [below](#raw-data-and-results). In short:
+```bash
+cd data
+dat clone ./
+```
 ### Running the whole pipeline
 From the src folder:
 ```bash
+chmod +x ./pipeline.sh
 ./pipeline.sh
 ```
-If necessary:
-```bash
-chmod +x ./pipeline.sh
-```
-### Run the python part of the pipeline, generating and characterizing the network
+### Generating and characterizing the network
 ```bash
 python main.py
 ```
-### Run the assessment part of the pipeline, testing the network against other networks. Includes MATLAB code.
+### Run the assessment part of the pipeline
 ```bash
 cd matlabpipeline
 matlab -r pipeline
@@ -62,8 +79,9 @@ Navigate to the directory you wish to download, either data or results, and use:
 dat clone ./
 ```
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTEwMDI1MTY2NTYsMTEyMDU0MjQ4NCw1Nz
-QzODQ5MjMsLTEwMDQ5NDgyNTcsMTAwNjk1MTg2MCwxMTUxMjA2
-NzEyLC0xNzQzNjU4NDIyLDEyMzE4ODM4NjcsLTE5MzY0MDAyMD
-EsLTExMzU2MDQ5M119
+eyJoaXN0b3J5IjpbLTMxNDI1OTMyMiw1NDYyNTUwMTUsMTA2Mj
+I3MDYzMSw2NzI5NTMzOTgsLTEwMDI1MTY2NTYsMTEyMDU0MjQ4
+NCw1NzQzODQ5MjMsLTEwMDQ5NDgyNTcsMTAwNjk1MTg2MCwxMT
+UxMjA2NzEyLC0xNzQzNjU4NDIyLDEyMzE4ODM4NjcsLTE5MzY0
+MDAyMDEsLTExMzU2MDQ5M119
 -->
