@@ -10,7 +10,7 @@ The scientific literature is vast, and valuable information connecting findings 
 
 MeTeOR, or the MeSH Term Objective Reasoning network, mines the PubMed literature, revealing knowledge previously hidden in a sea of information. Given one biological entity (a gene, drug, or disease), it can give a ranked list of associations with other biological entities, and it can highlight papers pertaining to any two biological entities.
 
-This MeTeOR network was assembled with python 3 and assessed the network as well as the unsupervised link prediction.
+This MeTeOR network was assembled with python 3 and it was assessed and predicted upon with MATLAB.
 
 A website serving the resulting network can be found [here](http://meteor.lichtargelab.org/).
 
@@ -80,10 +80,11 @@ Navigate to the directory you wish to download, either data or results, and use:
 dat clone ./
 ```
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbOTgzOTIxMTIxLDE1NjE4MzMzMzYsODc5Mj
-I1MDgyLC0xNTU5MDE2NzYyLC0zMTQyNTkzMjIsNTQ2MjU1MDE1
-LDEwNjIyNzA2MzEsNjcyOTUzMzk4LC0xMDAyNTE2NjU2LDExMj
-A1NDI0ODQsNTc0Mzg0OTIzLC0xMDA0OTQ4MjU3LDEwMDY5NTE4
-NjAsMTE1MTIwNjcxMiwtMTc0MzY1ODQyMiwxMjMxODgzODY3LC
-0xOTM2NDAwMjAxLC0xMTM1NjA0OTNdfQ==
+eyJoaXN0b3J5IjpbLTE3NTAzMzY1MjEsOTgzOTIxMTIxLDE1Nj
+E4MzMzMzYsODc5MjI1MDgyLC0xNTU5MDE2NzYyLC0zMTQyNTkz
+MjIsNTQ2MjU1MDE1LDEwNjIyNzA2MzEsNjcyOTUzMzk4LC0xMD
+AyNTE2NjU2LDExMjA1NDI0ODQsNTc0Mzg0OTIzLC0xMDA0OTQ4
+MjU3LDEwMDY5NTE4NjAsMTE1MTIwNjcxMiwtMTc0MzY1ODQyMi
+wxMjMxODgzODY3LC0xOTM2NDAwMjAxLC0xMTM1NjA0OTNdfQ==
+
 -->
