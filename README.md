@@ -18,10 +18,9 @@ A website serving the resulting network can be found [here](http://meteor.lichta
 There is a [shell script file](src/pipeline.sh) that can be run to assemble MeTeOR and to assess the resulting network. This may be relevant if you wish to have the latest PubMed articles or if you wish to modify some aspect of the creation process. For example, you could create a custom weighting process or create a subnetwork based only on a certain part of the literature. 
 ### Notes before running the pipeline
 #### Requirements
-See the requirements.txt file.
-
 ```bash
-virtualenv 
+virtualenv meteor
+source meteor/bin/activate
 pip install -r src/requirements.txt
 ```
 #### Time, space, and memory
@@ -75,9 +74,9 @@ Navigate to the directory you wish to download, either data or results, and use:
 dat clone ./
 ```
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbODM4ODIzOTMsNTQ2MjU1MDE1LDEwNjIyNz
-A2MzEsNjcyOTUzMzk4LC0xMDAyNTE2NjU2LDExMjA1NDI0ODQs
-NTc0Mzg0OTIzLC0xMDA0OTQ4MjU3LDEwMDY5NTE4NjAsMTE1MT
-IwNjcxMiwtMTc0MzY1ODQyMiwxMjMxODgzODY3LC0xOTM2NDAw
-MjAxLC0xMTM1NjA0OTNdfQ==
+eyJoaXN0b3J5IjpbMzUzODAxOTAwLDU0NjI1NTAxNSwxMDYyMj
+cwNjMxLDY3Mjk1MzM5OCwtMTAwMjUxNjY1NiwxMTIwNTQyNDg0
+LDU3NDM4NDkyMywtMTAwNDk0ODI1NywxMDA2OTUxODYwLDExNT
+EyMDY3MTIsLTE3NDM2NTg0MjIsMTIzMTg4Mzg2NywtMTkzNjQw
+MDIwMSwtMTEzNTYwNDkzXX0=
 -->
