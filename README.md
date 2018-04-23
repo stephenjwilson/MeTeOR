@@ -18,7 +18,7 @@ A website serving the resulting network can be found [here](http://meteor.lichta
 There is a [shell script file](src/pipeline.sh) that can be run to assemble MeTeOR and to assess the resulting network. This may be relevant if you wish to have the latest PubMed articles or if you wish to modify some aspect of the creation process. For example, you could create a custom weighting process or create a subnetwork based only on a certain part of the literature. 
 ### Notes before running the pipeline
 #### Requirements
-
+See the requirements.txt file.
 #### Time, space, and memory
 
  - PubMed Data: This data takes a very long time (2-3 days) depending on download speeds to obtain from PubMed using the script provided. However, this script downloads in a query specific manner, allowing the user to customize the query. For bulk download, this project can also be modified to run on [the NLM bulk downloads](https://www.nlm.nih.gov/databases/download/pubmed_medline.html). We provide a basic [python script](MEDLINE/downloadMEDLINE.py) to download this data. The raw XML can take upwards of 200 GB of space.
@@ -70,8 +70,9 @@ Navigate to the directory you wish to download, either data or results, and use:
 dat clone ./
 ```
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbMTA2MjI3MDYzMSw2NzI5NTMzOTgsLTEwMD
-I1MTY2NTYsMTEyMDU0MjQ4NCw1NzQzODQ5MjMsLTEwMDQ5NDgy
-NTcsMTAwNjk1MTg2MCwxMTUxMjA2NzEyLC0xNzQzNjU4NDIyLD
-EyMzE4ODM4NjcsLTE5MzY0MDAyMDEsLTExMzU2MDQ5M119
+eyJoaXN0b3J5IjpbNTQ2MjU1MDE1LDEwNjIyNzA2MzEsNjcyOT
+UzMzk4LC0xMDAyNTE2NjU2LDExMjA1NDI0ODQsNTc0Mzg0OTIz
+LC0xMDA0OTQ4MjU3LDEwMDY5NTE4NjAsMTE1MTIwNjcxMiwtMT
+c0MzY1ODQyMiwxMjMxODgzODY3LC0xOTM2NDAwMjAxLC0xMTM1
+NjA0OTNdfQ==
 -->
