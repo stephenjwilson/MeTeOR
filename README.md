@@ -26,8 +26,9 @@ pip install -r src/requirements.txt
 ```
 Other requirements:
 
- - MATLAB 
- - [Graphviz]() (for the network visualization)
+ - [MATLAB](https://www.mathworks.com/products/matlab.html) (for prediction and network assessment)
+ - [Graphviz](https://www.graphviz.org/) (for the network visualization)
+ - 
 
 #### Time, space, and memory
 
@@ -77,9 +78,9 @@ Navigate to the directory you wish to download, either data or results, and use:
 dat clone ./
 ```
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTEyMzM5MTc0OTYsNTQ2MjU1MDE1LDEwNj
-IyNzA2MzEsNjcyOTUzMzk4LC0xMDAyNTE2NjU2LDExMjA1NDI0
-ODQsNTc0Mzg0OTIzLC0xMDA0OTQ4MjU3LDEwMDY5NTE4NjAsMT
-E1MTIwNjcxMiwtMTc0MzY1ODQyMiwxMjMxODgzODY3LC0xOTM2
-NDAwMjAxLC0xMTM1NjA0OTNdfQ==
+eyJoaXN0b3J5IjpbMTExODQ2MTgxMyw1NDYyNTUwMTUsMTA2Mj
+I3MDYzMSw2NzI5NTMzOTgsLTEwMDI1MTY2NTYsMTEyMDU0MjQ4
+NCw1NzQzODQ5MjMsLTEwMDQ5NDgyNTcsMTAwNjk1MTg2MCwxMT
+UxMjA2NzEyLC0xNzQzNjU4NDIyLDEyMzE4ODM4NjcsLTE5MzY0
+MDAyMDEsLTExMzU2MDQ5M119
 -->
