@@ -8,8 +8,7 @@ from IPython import embed
 from utils import  process_MeTeOR_OUTPUT, getNetGS, getCoReg, upset#,process_network, getPathwayGenes, getCoReg, getNetGS @UnresolvedImport
 from IPMS import extract_experiments, determineInteractors 
 from assess_ranking import assess_ranking,formatForUpset 
-#from mapping import mapGenels, mapHGNC, getMappingData
-#from plottingNetworks import runPlots
+
 
 ### Plotting Setting ###
 font = {'weight': 'bold',
