@@ -49,13 +49,14 @@ To install dat:
 ```bash
 npm install -g dat
 ```
-### Downloading the data
+### Downloading the data with dat
 Navigate to the directory you wish to download, either data or results, and use:
 ```bash
 dat clone ./
 ```
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbNTc0Mzg0OTIzLC0xMDA0OTQ4MjU3LDEwMD
-Y5NTE4NjAsMTE1MTIwNjcxMiwtMTc0MzY1ODQyMiwxMjMxODgz
-ODY3LC0xOTM2NDAwMjAxLC0xMTM1NjA0OTNdfQ==
+eyJoaXN0b3J5IjpbMTEyMDU0MjQ4NCw1NzQzODQ5MjMsLTEwMD
+Q5NDgyNTcsMTAwNjk1MTg2MCwxMTUxMjA2NzEyLC0xNzQzNjU4
+NDIyLDEyMzE4ODM4NjcsLTE5MzY0MDAyMDEsLTExMzU2MDQ5M1
+19
 -->
