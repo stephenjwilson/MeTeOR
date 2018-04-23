@@ -1,8 +1,8 @@
 # MeTeOR
 ## Contents
 
- - [Project Description](#Project Description)
- - [Raw Data and Results](# Raw Data and Results)
+ - [Project Description](#project-description)
+ - [Raw Data and Results](#raw-data-and-results)
 
 ## Project Description
 
@@ -27,6 +27,6 @@ Navigate to the directory you wish to download, either data or results, and use:
 dat clone ./
 ```
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbMTU4OTYzMDI3OSwxMjMxODgzODY3LC0xOT
+eyJoaXN0b3J5IjpbMTMzMjM5NjI5MywxMjMxODgzODY3LC0xOT
 M2NDAwMjAxLC0xMTM1NjA0OTNdfQ==
 -->
