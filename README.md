@@ -2,12 +2,13 @@
 ## Contents
 
  - [Project Description](#project-description)
+ - [Running from Scratch](#running-from-scratch)
  - [Raw Data and Results](#raw-data-and-results)
 
 ## Project Description
 
 This project is built off of python 3 for the creation of the MeTeOR network and MATLAB for the assessment of the network as well as the unsupervised link prediction.
-
+## Running from Scratch
 
 ## Raw Data and Results
 To host the data and results of the project, I used [dat](https://datproject.org/) and [bulk downloads](http://meteor.lichtargelab.org/download).
@@ -27,6 +28,6 @@ Navigate to the directory you wish to download, either data or results, and use:
 dat clone ./
 ```
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbMTMzMjM5NjI5MywxMjMxODgzODY3LC0xOT
-M2NDAwMjAxLC0xMTM1NjA0OTNdfQ==
+eyJoaXN0b3J5IjpbLTE0MTk4MDk1NDcsMTIzMTg4Mzg2NywtMT
+kzNjQwMDIwMSwtMTEzNTYwNDkzXX0=
 -->
