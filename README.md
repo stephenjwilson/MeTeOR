@@ -15,7 +15,7 @@ This project is built off of python 3 for the creation of the MeTeOR network and
 A website serving the resulting network can be found [here](http://meteor.lichtargelab.org/).
 
 ## Running from Scratch
-
+There is a shell script file that can be run to 
 
 
 ## Raw Data and Results
@@ -36,6 +36,7 @@ Navigate to the directory you wish to download, either data or results, and use:
 dat clone ./
 ```
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbMTE1MTIwNjcxMiwtMTc0MzY1ODQyMiwxMj
-MxODgzODY3LC0xOTM2NDAwMjAxLC0xMTM1NjA0OTNdfQ==
+eyJoaXN0b3J5IjpbMTAwNjk1MTg2MCwxMTUxMjA2NzEyLC0xNz
+QzNjU4NDIyLDEyMzE4ODM4NjcsLTE5MzY0MDAyMDEsLTExMzU2
+MDQ5M119
 -->
