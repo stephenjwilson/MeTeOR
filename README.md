@@ -20,8 +20,8 @@ There is a [shell script file](src/pipeline.sh) that can be run to assemble MeTe
 #### Requirements
 #### Time, space, and memory
 
-PubMed Data: This data takes a very long time (2-3 days) depending on download speeds to obtain from PubMed using the script provided. However, this script downloads in a query specific manner, allowing the user to customize the query. For bulk download, this project can also be modified to run on [the NLM bulk downloads](https://www.nlm.nih.gov/databases/download/pubmed_medline.html). We provide a basic [python script](MEDLINE/downloadMEDLINE.py) to download this data.
-	 -  All code was run on an Intel® Core™ i7-4820K CPU @ 3.70GHz × 8 with 64 GB RAM. From start to finish, everything should complete within a week.
+ - PubMed Data: This data takes a very long time (2-3 days) depending on download speeds to obtain from PubMed using the script provided. However, this script downloads in a query specific manner, allowing the user to customize the query. For bulk download, this project can also be modified to run on [the NLM bulk downloads](https://www.nlm.nih.gov/databases/download/pubmed_medline.html). We provide a basic [python script](MEDLINE/downloadMEDLINE.py) to download this data. The raw XML can take upwards of 200 GB of space.
+ -  All code was run on an Intel® Core™ i7-4820K CPU @ 3.70GHz × 8 with 64 GB RAM. From start to finish, everything should complete within a week.
 	 - The Non-negative Matrix Factorization (NMF) conducted in the analysis part of the pipeline and run in MATLAB can be very time and memory intensive. If you chose to, you can download [pre-computed results](#raw-data-and-results) to greatly increase the speed of analysis.
 	 - 
 
@@ -64,7 +64,7 @@ Navigate to the directory you wish to download, either data or results, and use:
 dat clone ./
 ```
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTExNjcxMjI5OCwtMTAwMjUxNjY1NiwxMT
+eyJoaXN0b3J5IjpbLTg5ODUzNDM3MSwtMTAwMjUxNjY1NiwxMT
 IwNTQyNDg0LDU3NDM4NDkyMywtMTAwNDk0ODI1NywxMDA2OTUx
 ODYwLDExNTEyMDY3MTIsLTE3NDM2NTg0MjIsMTIzMTg4Mzg2Ny
 wtMTkzNjQwMDIwMSwtMTEzNTYwNDkzXX0=
