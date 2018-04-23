@@ -20,6 +20,8 @@ There is a [shell script file](src/pipeline.sh) that can be run to assemble MeTe
 #### Requirements
 #### Time and memory
 
+ - Time
+	 - PubMed Data: This data takes a very long time to download from PubMed using the script provided. 
 
 ### Running the whole pipeline
 From the src folder:
@@ -60,7 +62,7 @@ Navigate to the directory you wish to download, either data or results, and use:
 dat clone ./
 ```
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbMTMxNDA5MzY5NiwxMTIwNTQyNDg0LDU3ND
+eyJoaXN0b3J5IjpbLTU4NTM1NDQ5NSwxMTIwNTQyNDg0LDU3ND
 M4NDkyMywtMTAwNDk0ODI1NywxMDA2OTUxODYwLDExNTEyMDY3
 MTIsLTE3NDM2NTg0MjIsMTIzMTg4Mzg2NywtMTkzNjQwMDIwMS
 wtMTEzNTYwNDkzXX0=
