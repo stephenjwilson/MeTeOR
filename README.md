@@ -19,6 +19,11 @@ There is a [shell script file](src/pipeline.sh) that can be run to assemble MeTe
 ### Notes before running the pipeline
 #### Requirements
 See the requirements.txt file.
+
+```bash
+virtualenv 
+pip install -r src/requirements.txt
+```
 #### Time, space, and memory
 
  - PubMed Data: This data takes a very long time (2-3 days) depending on download speeds to obtain from PubMed using the script provided. However, this script downloads in a query specific manner, allowing the user to customize the query. For bulk download, this project can also be modified to run on [the NLM bulk downloads](https://www.nlm.nih.gov/databases/download/pubmed_medline.html). We provide a basic [python script](MEDLINE/downloadMEDLINE.py) to download this data. The raw XML can take upwards of 200 GB of space.
@@ -70,9 +75,9 @@ Navigate to the directory you wish to download, either data or results, and use:
 dat clone ./
 ```
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbNTQ2MjU1MDE1LDEwNjIyNzA2MzEsNjcyOT
-UzMzk4LC0xMDAyNTE2NjU2LDExMjA1NDI0ODQsNTc0Mzg0OTIz
-LC0xMDA0OTQ4MjU3LDEwMDY5NTE4NjAsMTE1MTIwNjcxMiwtMT
-c0MzY1ODQyMiwxMjMxODgzODY3LC0xOTM2NDAwMjAxLC0xMTM1
-NjA0OTNdfQ==
+eyJoaXN0b3J5IjpbODM4ODIzOTMsNTQ2MjU1MDE1LDEwNjIyNz
+A2MzEsNjcyOTUzMzk4LC0xMDAyNTE2NjU2LDExMjA1NDI0ODQs
+NTc0Mzg0OTIzLC0xMDA0OTQ4MjU3LDEwMDY5NTE4NjAsMTE1MT
+IwNjcxMiwtMTc0MzY1ODQyMiwxMjMxODgzODY3LC0xOTM2NDAw
+MjAxLC0xMTM1NjA0OTNdfQ==
 -->
