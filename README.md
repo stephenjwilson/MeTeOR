@@ -20,7 +20,7 @@ There is a [shell script file](src/pipeline.sh) that can be run to assemble MeTe
 #### Requirements
 For the python portion:
 ```bash
-virtualenv meteor_env
+virtualenv -p python3 meteor_env
 source meteor_env/bin/activate
 pip install -r src/requirements.txt
 ```
@@ -80,10 +80,11 @@ Navigate to the directory you wish to download, either data or results, and use:
 dat clone ./
 ```
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbOTMyOTQxNjgzLDk4MzkyMTEyMSwxNTYxOD
-MzMzM2LDg3OTIyNTA4MiwtMTU1OTAxNjc2MiwtMzE0MjU5MzIy
-LDU0NjI1NTAxNSwxMDYyMjcwNjMxLDY3Mjk1MzM5OCwtMTAwMj
-UxNjY1NiwxMTIwNTQyNDg0LDU3NDM4NDkyMywtMTAwNDk0ODI1
-NywxMDA2OTUxODYwLDExNTEyMDY3MTIsLTE3NDM2NTg0MjIsMT
-IzMTg4Mzg2NywtMTkzNjQwMDIwMSwtMTEzNTYwNDkzXX0=
+eyJoaXN0b3J5IjpbMjA1NjYyNzU4NSw5MzI5NDE2ODMsOTgzOT
+IxMTIxLDE1NjE4MzMzMzYsODc5MjI1MDgyLC0xNTU5MDE2NzYy
+LC0zMTQyNTkzMjIsNTQ2MjU1MDE1LDEwNjIyNzA2MzEsNjcyOT
+UzMzk4LC0xMDAyNTE2NjU2LDExMjA1NDI0ODQsNTc0Mzg0OTIz
+LC0xMDA0OTQ4MjU3LDEwMDY5NTE4NjAsMTE1MTIwNjcxMiwtMT
+c0MzY1ODQyMiwxMjMxODgzODY3LC0xOTM2NDAwMjAxLC0xMTM1
+NjA0OTNdfQ==
 -->
