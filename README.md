@@ -45,7 +45,6 @@ dat clone ./
 ```
 ### Running the whole pipeline
 ```bash
-cd src
 chmod +x ./pipeline.sh
 ./pipeline.sh
 ```

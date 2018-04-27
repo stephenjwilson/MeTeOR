@@ -1,21 +1,29 @@
 from lxml import etree  # @UnresolvedImport
 #import xml.etree.cElementTree as etree
 from IPython import embed
-import re
+import re,os
 from collections import defaultdict
 
-def setup(resultdir='../results',datadir='../data',verbose=1):
+def setup(resultdir='../results',datadir='../data',IDsfl='',verbose=1):
+    '''
+    Loads PMIDs if nee
+    '''
+    if IDsfl=='' and os.path.exists('{}/EBVA.txt'.format(datadir)):
+        IDsfl='{}/EBVA.txt'.format(datadir)
+        
     # extract all possible uis and if they are in the protein section
     uis,_=extractUIs(resultdir=resultdir,datadir=datadir)
-
-    # Load PMIDs
-    f=open('{}/EBVA.txt'.format(datadir,'r'))
-    storedIDs=f.read()
-    f.close()
-    storedIDs=storedIDs.strip().split('\n')
-    if verbose:
-        print('Loaded PMIDs...')
-    
+    if IDsfl!='':
+        # Load PMIDs
+        f=open(IDsfl,'r')
+        storedIDs=f.read()
+        f.close()
+        storedIDs=storedIDs.strip().split('\n')
+        if verbose:
+            print('Loaded PMIDs...')
+    else:
+        storedIDs=[]
+        
     ### Make a dictionary of PMIDs to their gene ids
     examplegenelink=defaultdict(list)
     lines=open('{}/mapping/gene/gene2pubmed'.format(datadir)).readlines()
@@ -37,8 +45,7 @@ def setup(resultdir='../results',datadir='../data',verbose=1):
     return examplegenelink,enumpmid,enumui,uis
 
 def parse(infl,enumpmid,enumui,uis,meta,recover=False):
-    #if parser==None:
-    #    parser = etree.XMLParser(recover=True)
+
     pmids=[]
     meshids=[]
     miss=0
@@ -54,14 +61,14 @@ def parse(infl,enumpmid,enumui,uis,meta,recover=False):
             meshel=meshel.findall('MeshHeading')
             for m in meshel:
                 mesh.append(m.find('DescriptorName').attrib['UI'])
-        #print(mesh)
+
         #chem
         chemel=elem.find('MedlineCitation').find('ChemicalList')
         if chemel!=None: # if it exists
             chemel=chemel.findall('Chemical')
             for m in chemel:
                 mesh.append(m.find('NameOfSubstance').attrib['UI'])
-        #print(mesh)
+
         return mesh
     def getYears(elem):
         dates=[]
@@ -79,7 +86,7 @@ def parse(infl,enumpmid,enumui,uis,meta,recover=False):
         return years
         
     context = etree.iterparse(infl, events=('end',), tag='PubmedArticle',encoding='utf-8',recover=recover)
-    
+    currentPMID=len(enumpmid.keys())
     for _,elem in context:
         pmid= elem.find('MedlineCitation').find('PMID').text # First PMID is the right one
         if pmid==None or pmid=='':
@@ -88,8 +95,8 @@ def parse(infl,enumpmid,enumui,uis,meta,recover=False):
         try:
             pmidInd=enumpmid[pmid]
         except KeyError:
-            pmidInd=len(uis) # Or do I need the max??????
-            uis.append(pmid)
+            pmidInd=currentPMID
+            currentPMID+=1
             enumpmid[pmid]=pmidInd
         
         mesh = getTerms(elem)

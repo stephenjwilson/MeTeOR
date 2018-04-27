@@ -8,7 +8,19 @@ import os
 # Import internal packages
 import crawlPubMedFiles,downloadPubMed,processNetworks,assessNetwork
 from NetViz import NetViz
-def main(storagedir,datadir,resultdir):
+import click
+
+@click.command()
+@click.option('--storagedir', default='../MEDLINE', help='Where to store the downlaoded PubMed XML')
+@click.option('--datadir', default='../data',
+              help="Where the package's data folder is stored ('../data' if running from src)")
+@click.option('--resultdir', default='../results',
+              help="Where the package's result folder is stored ('../results' if running from src)")
+@click.option('--downloadbulk', default=1,
+              help="If 1, this option will download PubMed from an FTP server in whole. If 0, this option will download according to a specific query")
+@click.option('--searchterm', default='',
+              help="If not empty, this option will specify a specific query to build a network off of. downloadBulk must be set to 0.")
+def main(storagedir,datadir,resultdir,downloadbulk,searchterm):
         
     # Ensure the storage dir exists
     try:
@@ -17,23 +29,24 @@ def main(storagedir,datadir,resultdir):
         pass
     
     # Download Pubmed Files if needed
-    # downloadPubMed.downloadAll(storagedir=storagedir) # Put up on OSF???
+    if downloadbulk:
+        downloadPubMed.downloadBulk(storagedir=storagedir)
+    else:
+        downloadPubMed.downloadAll(storagedir=storagedir,searchterm=searchterm)
     
     # Crawl Downloaded files and make co-occurrence matrix
-    #crawlPubMedFiles.main(datadir, storagedir, resultdir)
+    crawlPubMedFiles.main(datadir, storagedir, resultdir)
     
     # Produce networks
-    #processNetworks.main(datadir=datadir,resultdir=resultdir)
+    processNetworks.main(datadir=datadir,resultdir=resultdir)
     
     # Characterize Network
-    #assessNetwork.run(resultdir=resultdir) # Generates publications per year plot
+    assessNetwork.run(resultdir=resultdir) # Generates publications per year plot
     
     # Plot network
     NetViz.main(resultdir) # Produce a dot file that is used by graphviz to make a network visualization that is made as a png
     
     
 if __name__ == '__main__':
-    storagedir='/home/stephen/ExtraDrive1/MeSH_V3'
-    datadir='../data' # Where the package's data folder is stored ('../data' if running from src)
-    resultdir='../results' # Where the package's results folder is stored ('../results' if running from src)
-    main(storagedir,datadir,resultdir)
+
+    main()

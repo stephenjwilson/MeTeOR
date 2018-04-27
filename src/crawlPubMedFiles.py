@@ -1,5 +1,5 @@
 import sys,traceback
-import time,re,os,scipy,itertools
+import time,re,os,scipy,itertools,glob
 from operator import itemgetter
 from IPython import embed
 import pandas as pd
@@ -17,6 +17,39 @@ from _operator import itemgetter
 #from lxml.html import soupparser
 #import lxml.etree as etree
 
+
+    
+def main(datadir='../data',storagedir='../MEDLINE',resultdir='.',verbose=1):
+    '''
+    Crawls downloaded MEDLINE data to create matrix of PMID by MeSH/SCR terms as well as the co-occurrence matrix
+    ''' 
+    # Run Crawl if needed   
+    if not(os.path.exists('{}/pmids.txt'.format(resultdir))):
+        rows,cols,total,currentPMIDs=runCrawl(datadir, storagedir, resultdir, verbose)
+    else:
+        f=open('{}/pmids.txt'.format(resultdir))
+        currentPMIDs=[]
+        for line in f:
+            line=line.strip('\n').split('\t')
+            currentPMIDs.append(line[0])
+        rows=len(currentPMIDs)
+        cols=0# will be assigned in makeTermMat
+        total=0# will be assigned in makeTermMat
+    if verbose:
+        print('Making matrices...')    
+    toc=time.time()
+    # Write out matrix of indices
+    mat=makeTermMat(storagedir, resultdir, rows, cols, total, verbose=verbose)
+    ### Make CoOccurence Matrix
+    makeCliques(mat,resultdir, currentPMIDs=currentPMIDs)
+    # Time-stamped
+    makeCliques(mat,resultdir,currentPMIDs=currentPMIDs,year=2014,meta=meta)
+    
+    toc=time.time()
+    if verbose:
+        print('{} seconds to make matrices'.format((toc-tic1)))
+        print('{} minutes to make matrices'.format((toc-tic1)/60))
+    
 def fixXML(fl):
     ''' Attempt to fix XML files that cause problems. For example,  <ForeName>M<?ForeName>  is a line from 14620000 and breaks the entire XML parser.'''
     #Delete lines that have symbols between the tags <>
@@ -48,12 +81,11 @@ def fixXML(fl):
         #    OUT.write(lines[i])
     OUT.close()
     return newfl
-        
-        
-def main(datadir='../data',storagedir='/home/stephen/ExtraDrive1/MeSH_V3',resultdir='.',verbose=1):
+
+def runCrawl(datadir='../data',storagedir='../MEDLINE',resultdir='.',verbose=1):
     '''
-    Crawls downloaded MEDLINE data to create matrix of PMID by MeSH/SCR terms as well as the co-occurrence matrix
-    '''       
+    Crawls the XML to extract the relationships between PubMed articles and MeSH / SCR terms. Takes ~3 hrs on local desktop
+    '''
     ### Run Crawl ###
     tic1=time.time()
     addedids=[]
@@ -74,65 +106,50 @@ def main(datadir='../data',storagedir='/home/stephen/ExtraDrive1/MeSH_V3',result
     indicies=[]
     tic=time.time()
     log=open('Log.txt','w')
-    for i in range(0,count,step):
-        if i+step>count:
-            artnum= '{}:{}'.format(i,count)
-            retstart=i
-            retend=count
-        else:
-            artnum= '{}:{}'.format(i,i+step)
-            retstart=i
-            retend=i+step
-
-        fl='{}/{}.xml'.format(storagedir,i)
-        if os.path.exists(fl):
-            if os.stat(fl).st_size!=0:
-                # Sometimes the tags are malformed. If that's the case, use HTML recovering to fix the tags in the parsing process
+    xmlFls=glob.glob(os.path.join(storagedir,'*.xml'))
+    for xmlFl in xmlFls:
+        if os.stat(xmlFl).st_size!=0:
+            # Sometimes the tags are malformed. If that's the case, use HTML recovering to fix the tags in the parsing process
+            try:
+                indicies,pmids,meshids,miss=parse(xmlFl,enumpmid,enumui,uis,meta)
+            except:
                 try:
-                    indicies,pmids,meshids,miss=parse('{}/{}.xml'.format(storagedir,i),enumpmid,enumui,uis,meta)
+                    indicies,pmids,meshids,miss=parse(xmlFl,enumpmid,enumui,uis,meta,recover=True)
+                    if verbose:
+                        print('Recovering XML')
                 except:
+                    if verbose:
+                            print('Removing XML lines that are problematic')
                     try:
-                        indicies,pmids,meshids,miss=parse('{}/{}.xml'.format(storagedir,i),enumpmid,enumui,uis,meta,recover=True)
-                        if verbose:
-                            print('Recovering XML')
+                        fl2=fixXML(xmlFl) # Try removing lines that have symbols within tags
+                        xmlFl=fl2
                     except:
-                        if verbose:
-                                print('Removing XML lines that are problematic')
-                        try:
-                            fl2=fixXML(fl) # Try removing lines that have symbols within tags
-                            fl=fl2
-                        except:
-                            pass
-                        try:
-                            indicies,pmids,meshids,miss=parse('{}/{}.xml'.format(storagedir,i),enumpmid,enumui,uis,meta,recover=True)
-                        except:
-                            missed+=5000
-                            e = traceback.format_exc()
-                            s='XML File:{} has a problem. Skipping...Error:{}\n'.format(i,e)
-                            log.write(s)
-                            print(s)
-                        continue
-            else:
-                os.remove(fl)
-                s='Failed to load:{}..Continuing'.format(fl)
-                log.write(s)
-                print(s)
-                missed+=5000
-                continue
+                        pass
+                    # try fixed xml fl
+                    try:
+                        indicies,pmids,meshids,miss=parse(xmlFl,enumpmid,enumui,uis,meta,recover=True)
+                    except:
+                        missed+=1
+                        e = traceback.format_exc()
+                        s='XML File:{} has a problem. Skipping...Error:{}\n'.format(xmlFl,e)
+                        log.write(s)
+                        print(s)
+                    continue
         else:
-            s='Failed to load:{}..Continuing'.format(fl)
+            os.remove(xmlFl)
+            s='Failed to load:{}..Continuing'.format(flxmlFl)
             log.write(s)
             print(s)
-            missed+=5000
+            missed+=1
             continue
-        
+
         # Write out UIs
         OUT=open('{}/UIs.txt'.format(resultdir),'w')
         OUT.write('\n'.join(uis))
         OUT.close()
         
         # Output indices
-        OUT=open('{}/{}_IND.txt'.format(storagedir,i),'w')
+        OUT=open('{}_IND.txt'.format(xmlFl),'w')
         for x,y in indicies:
             OUT.write('{}\t{}\n'.format(x,y))
         OUT.close()
@@ -142,12 +159,12 @@ def main(datadir='../data',storagedir='/home/stephen/ExtraDrive1/MeSH_V3',result
         addedids+=pmids
         addedmesh+=meshids
     
-        if i%100000==0 and verbose and i!=0:
+        if verbose:
             toc=time.time()
-            print(toc-tic, ' for {}'.format(artnum))
+            print(toc-tic, ' for {}'.format(xmlFls.index(xmlFl)))
             print('Added PMIDs: {}'.format(len(addedids)))
             print('Added MeSH PMIDs: {}'.format(len(addedmesh)))
-            print('Missed: {}'.format(missed))
+            print('Missed files: {}'.format(missed))
             tic=time.time()
     log.close()
     toc=time.time()
@@ -179,27 +196,27 @@ def main(datadir='../data',storagedir='/home/stephen/ExtraDrive1/MeSH_V3',result
     for pmid, ind in enumpmid.items():
         currentPMIDs[ind]=pmid
     for i in range(0,len(currentPMIDs)):
-        OUT.write('{}\t{}\n'.format(int(currentPMIDs[i][0]),i))
+        OUT.write('{}\n'.format(int(currentPMIDs[i][0])))
     OUT.close()
+    
     currentPMIDs=[str(int(x[0])) for x in currentPMIDs]
     total=len(allinds)
     rows=len(currentPMIDs)
     cols=len(uis)
-    
-    # Write out matrix of indices
-    mat=makeTermMat(rows, cols, total, storagedir, resultdir, verbose)
-    ### Make CoOccurence Matrix
-    makeCliques(mat,resultdir, currentPMIDs=currentPMIDs)
-    # Time-stamped
-    makeCliques(mat,resultdir,currentPMIDs=currentPMIDs,year=2014,meta=meta)
-    
-    toc=time.time()
-    print('{} seconds to do everything'.format((toc-tic1)))
-    print('{} minutes to do everything'.format((toc-tic1)/60))
-    
-def makeTermMat(rows,cols,total,storagedir,resultdir,verbose=1):
+    return rows,cols,total,currentPMIDs  
+
+def makeTermMat(storagedir,resultdir,rows=0,cols=0,total=0,step=10000000,verbose=1):
+    '''
+    Takes in the number of rows and columns, and total associations then loads all indices outputed by main to file.
+    '''
+    if rows==0:
+        rows=sum(1 for line in open('{}/pmids.txt'.format(resultdir)))
+    if cols==0:
+        cols=sum(1 for line in open('{}/UIs.txt'.format(resultdir)))
+    if total==0:
+        total=sum(1 for line in open('{}/AllIND.txt'.format(storagedir)))
+                
     mat=coo_matrix((rows,cols))
-    step=10000000
     allinds=open('{}/AllIND.txt'.format(storagedir))
     for i in range(0,total,step):
         x=[]
@@ -210,7 +227,7 @@ def makeTermMat(rows,cols,total,storagedir,resultdir,verbose=1):
             x.append(int(line[0]))
             y.append(int(line[1]))
             if x[-1]>=rows or y[-1]>=cols:
-                embed()
+                raise Exception('Your indices are greater than the number of PMIDs or UIs in the files. Did they get altered?')
                  
         chunk=coo_matrix((np.ones(len(x)),(x,y)),shape=(rows,cols))
         mat+=chunk
@@ -280,4 +297,4 @@ def makeCliques(mat,resultdir,currentPMIDs=None,year=None,meta=None,step=100000,
 
 if __name__=='__main__':
     #sys.settrace(main)
-    main(datadir='../data',resultdir='../results',storagedir='/home/stephen/ExtraDrive1/MeSH_V3')
+    main(datadir='../data',resultdir='../results',storagedir='../MEDLINE')
