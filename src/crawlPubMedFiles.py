@@ -25,7 +25,7 @@ def main(datadir='../data',storagedir='../MEDLINE',resultdir='.',verbose=1):
     ''' 
     # Run Crawl if needed   
     if not(os.path.exists('{}/pmids.txt'.format(resultdir))):
-        rows,cols,total,currentPMIDs=runCrawl(datadir, storagedir, resultdir, verbose)
+        rows,cols,total,currentPMIDs,meta=runCrawl(datadir, storagedir, resultdir, verbose)
     else:
         f=open('{}/pmids.txt'.format(resultdir))
         currentPMIDs=[]
@@ -35,9 +35,10 @@ def main(datadir='../data',storagedir='../MEDLINE',resultdir='.',verbose=1):
         rows=len(currentPMIDs)
         cols=0# will be assigned in makeTermMat
         total=0# will be assigned in makeTermMat
+        meta=None
     if verbose:
-        print('Making matrices...')    
-    toc=time.time()
+        print('Making matrices...')
+    tic=time.time()
     # Write out matrix of indices
     mat=makeTermMat(storagedir, resultdir, rows, cols, total, verbose=verbose)
     ### Make CoOccurence Matrix
@@ -47,8 +48,8 @@ def main(datadir='../data',storagedir='../MEDLINE',resultdir='.',verbose=1):
     
     toc=time.time()
     if verbose:
-        print('{} seconds to make matrices'.format((toc-tic1)))
-        print('{} minutes to make matrices'.format((toc-tic1)/60))
+        print('{} seconds to make matrices'.format((toc-tic)))
+        print('{} minutes to make matrices'.format((toc-tic)/60))
     
 def fixXML(fl):
     ''' Attempt to fix XML files that cause problems. For example,  <ForeName>M<?ForeName>  is a line from 14620000 and breaks the entire XML parser.'''
@@ -203,7 +204,7 @@ def runCrawl(datadir='../data',storagedir='../MEDLINE',resultdir='.',verbose=1):
     total=len(allinds)
     rows=len(currentPMIDs)
     cols=len(uis)
-    return rows,cols,total,currentPMIDs  
+    return rows,cols,total,currentPMIDs,meta  
 
 def makeTermMat(storagedir,resultdir,rows=0,cols=0,total=0,step=10000000,verbose=1):
     '''

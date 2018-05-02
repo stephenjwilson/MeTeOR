@@ -7,25 +7,25 @@ import scipy.sparse
 import geneMapping
 
 def main(datadir='../data',resultdir='../results',verbose=1):
-#     # MeTeOR and generate gene mapping
-#     mapMeteor(datadir=datadir, resultdir=resultdir,verbose=verbose)
-# 
-#     # Genes
-#     processBIOGRID(datadir=datadir, resultdir=resultdir,verbose=verbose)
-#     processMSigDB(datadir=datadir, resultdir=resultdir,verbose=verbose)
-#     processMSigDB(fl='c2.cp.v6.1.entrez.gmt',datadir=datadir, resultdir=resultdir,verbose=verbose)
-#     processEVEX(datadir=datadir, resultdir=resultdir,verbose=verbose) # Text-mining
-#     processSTRING(datadir=datadir, resultdir=resultdir,verbose=verbose)
-    
+    # MeTeOR and generate gene mapping
+    mapMeteor(datadir=datadir, resultdir=resultdir,verbose=verbose)
+ 
+    # Genes
+    processBIOGRID(datadir=datadir, resultdir=resultdir,verbose=verbose)
+    processMSigDB(datadir=datadir, resultdir=resultdir,verbose=verbose)
+    processMSigDB(fl='c2.cp.v6.1.entrez.gmt',datadir=datadir, resultdir=resultdir,verbose=verbose)
+    processEVEX(datadir=datadir, resultdir=resultdir,verbose=verbose) # Text-mining
+    processSTRING(datadir=datadir, resultdir=resultdir,verbose=verbose)
+     
 
-#     # Chemicals
-#     processBIOGRIDChem(datadir=datadir, resultdir=resultdir,verbose=verbose)
-#     processDGIdb(datadir=datadir, resultdir=resultdir,verbose=verbose)
-#     processSTITCH(datadir=datadir, resultdir=resultdir,verbose=verbose) # Text-mining
+    # Chemicals
+    processBIOGRIDChem(datadir=datadir, resultdir=resultdir,verbose=verbose)
+    processDGIdb(datadir=datadir, resultdir=resultdir,verbose=verbose)
+    processSTITCH(datadir=datadir, resultdir=resultdir,verbose=verbose) # Text-mining
     # Diseases
-#     processHPO(datadir=datadir, resultdir=resultdir,verbose=verbose)
+    processHPO(datadir=datadir, resultdir=resultdir,verbose=verbose)
     processCTD(datadir=datadir, resultdir=resultdir,verbose=verbose)
-#     processDisgenet(datadir=datadir, resultdir=resultdir,verbose=verbose) # Text-mining Befree System
+
     
 ### Process Sources ###
 ### Gene Sources ###  
