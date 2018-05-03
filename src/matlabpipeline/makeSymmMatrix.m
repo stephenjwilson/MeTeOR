@@ -6,7 +6,7 @@ function [ network,e1Names ] = makeSymmMatrix( edgelist,name,root)
 if nargin<3
     root='./';
 end
-loc=sprintf('%s%sFAIL.mat',root,name);
+loc=sprintf('%s%s.mat',root,name);
 
 try
     load(loc)

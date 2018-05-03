@@ -102,6 +102,6 @@ def render(root,title=''):
     except Exception as e: 
         print(e)
         print('Make sure Graphviz installed')
-        print('Alternatively, run /path/to/sfdp -Tsvg -o../results/MeTeOR.svg ../results/MeTeOR.dot')
-    # terminal command: ~/bin/sfdp -Tsvg -o../results/MeTeOR.svg ../results/MeTeOR.dot
+        print('Alternatively, run /path/to/sfdp -Tsvg -o ./results/MeTeOR.svg ./results/MeTeOR.dot')
+    # terminal command: ~/bin/sfdp -Tsvg -o ./results/MeTeOR.svg ./results/MeTeOR.dot
     # Convert to png with: inkscape -z -e MeTeOR.png -w 1024 -h 1024 MeTeOR.svg

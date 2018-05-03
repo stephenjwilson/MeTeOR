@@ -4,8 +4,8 @@
 % [~,out]=system('vmstat -s -S M | grep "free memory"');
 % parts=strsplit(out);
 % totalmem=parts{2};
-% if str2num(totalmem)<150000
-%     error('Total Memory is:%sMB. Recommended Memory is 150GB',totalmem)
+% if str2num(totalmem)<64000
+%     error('Total Memory is:%sMB. Recommended Memory is 64GB',totalmem)
 % end
 
 %% load yaml library and config
