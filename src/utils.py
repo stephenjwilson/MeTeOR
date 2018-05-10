@@ -77,6 +77,8 @@ def parse(infl,enumpmid,enumui,uis,meta,recover=False):
         except:
             try:
                 year=elem.find('PubmedData').find('MedlineCitation').find('Article').find('ArticleDate').find('Year').text
+                if int(year)<1500: # make sure it is accurate
+                    return []
             except:
                 return []
             return [year]
