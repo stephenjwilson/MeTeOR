@@ -88,8 +88,8 @@ def downloadAll(storagedir,searchterm=''):
     getData(storagedir=storagedir,searchterm=searchterm)
 
 def downloadBulk(storagedir):
-    address='ftp://ftp.ncbi.nlm.nih.gov/pubmed/baseline/'
-    address2='ftp://ftp.ncbi.nlm.nih.gov/pubmed/updatefiles/'
+    address='ftp://ftp.ncbi.nlm.nih.gov/pubmed/baseline'
+    address2='ftp://ftp.ncbi.nlm.nih.gov/pubmed/updatefiles'
     fl='{0}/pubmed18n{1:04d}.xml.gz'
     for i in range(1,1105):
         if os.path.exists(fl.format(storagedir,i)):
@@ -99,17 +99,17 @@ def downloadBulk(storagedir):
         else:
             url=address2
         try:
-            open(fl.format(i))
+            open(fl.format(storagediri))
         except:
             print('Downloading {}'.format(i))
-            req=urllib.request.Request(url+fl.format(i))
+            req=urllib.request.Request(fl.format(url,i))
             response = urllib.request.urlopen(req)
             the_page = response.read()
-            f=open(fl.format(i),'wb')
+            f=open(fl.format(storagedir,i),'wb')
             f.write(the_page)
             f.close()
-            with gzip.open(fl.format(i), 'rb') as fh:
+            with gzip.open(fl.format(storagedir,i), 'rb') as fh:
                 file_content = fh.read()
-                f=open(fl.format(i).replace('.gz',''),'wb')
+                f=open(fl.format(storagedir,i).replace('.gz',''),'wb')
                 f.write(file_content)
                 f.close()
