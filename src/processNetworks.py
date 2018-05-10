@@ -25,7 +25,7 @@ def main(datadir='../data',resultdir='../results',verbose=1):
     # Diseases
     processHPO(datadir=datadir, resultdir=resultdir,verbose=verbose)
     processCTD(datadir=datadir, resultdir=resultdir,verbose=verbose)
-
+    processDisgenet(datadir=datadir, resultdir=resultdir,verbose=verbose)
     
 ### Process Sources ###
 ### Gene Sources ###  
@@ -854,4 +854,4 @@ def getMeshDieases(fl='treemap.txt',resultdir='../results',verbose=1):
     return diseaseUIs
 
 if __name__=='__main__':
-    main(resultdir='../results/')
+    main()
