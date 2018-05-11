@@ -69,6 +69,10 @@ To download data using dat, ensure node (version  >= 4) is installed:
 node -v
 ```
 If it needs to be installed. go to their [website](https://nodejs.org/en/download/). or:
+```bash
+curl -sL https://deb.nodesource.com/setup_10.x | sudo -E bash -
+sudo apt-get install -y nodejs
+```
 
 To install dat:
 ```bash
@@ -80,6 +84,6 @@ Navigate to the directory you wish to download, either data or results, and use:
 dat clone ./
 ```
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbMTUyNzEyNzI4MiwtMTg2NzAzNjI2MSwtMj
+eyJoaXN0b3J5IjpbMTQ3MzU3NTExMSwtMTg2NzAzNjI2MSwtMj
 A5MTU0Mzc3MiwtMTkyNTkwMDc2NywtMTQ2NjYwNDk3MF19
 -->
