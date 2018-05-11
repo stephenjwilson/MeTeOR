@@ -43,9 +43,9 @@ python main.py
 ```
 Because this downloads a lot of data, you can specify the storage directory for the PubMed XML.
 ```bash
-python main.py --storagedir /path/tp
+python main.py --storagedir /path/to/dir
 ```
-### Run the assessment part of the pipeline
+### Run only the assessment part of the pipeline
 ```bash
 cd matlabpipeline
 matlab -r pipeline
@@ -71,6 +71,7 @@ Navigate to the directory you wish to download, either data or results, and use:
 ```bash
 dat clone ./
 ```
+from the directory of interest.
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbMjEwNjg3MjY3Ml19
+eyJoaXN0b3J5IjpbMjA2MTcwMjQwMF19
 -->
