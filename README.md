@@ -15,6 +15,7 @@ This MeTeOR network was assembled with python 3 and it was assessed and predicte
 
 ## Webserver
 A website serving the resulting network can be found [here](http://meteor.lichtargelab.org/).
+
 The MeTeOR network can be download via the [results bulk download](http://static.lichtargelab.org/MeTeOR/results.tar.gz) or as [flat files](http://static.lichtargelab.org/MeTeOR/MeTeORFlatFiles.tar.gz).
 
 ## Running from Scratch
@@ -77,6 +78,6 @@ dat clone ./
 ```
 from the directory of interest.
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbMTM5Njg1Mzc5NywtMTkyNTkwMDc2NywtMT
-Q2NjYwNDk3MF19
+eyJoaXN0b3J5IjpbLTE3NDA0MTMzMjEsLTE5MjU5MDA3NjcsLT
+E0NjY2MDQ5NzBdfQ==
 -->
