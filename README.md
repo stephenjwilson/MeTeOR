@@ -26,7 +26,7 @@ Alternatively, you can download the results and use those for your project. This
  - [python3](https://www.python.org/downloads/release/python-360/)
  - [MATLAB](https://www.mathworks.com/products/matlab.html) (for prediction and network assessment)
  - [Graphviz](https://www.graphviz.org/) (for the network visualization)
- - python3-dev
+ - python3-dev([Ex.]())
  - [npm](#installing-dat)
  - [dat](#installing-dat)
 
@@ -80,6 +80,6 @@ Navigate to the directory you wish to download, either data or results, and use:
 dat clone ./
 ```
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTQyNjgyOTQyNiwtMjA5MTU0Mzc3MiwtMT
-kyNTkwMDc2NywtMTQ2NjYwNDk3MF19
+eyJoaXN0b3J5IjpbLTE0NjIyNTAzNjUsLTIwOTE1NDM3NzIsLT
+E5MjU5MDA3NjcsLTE0NjY2MDQ5NzBdfQ==
 -->
