@@ -34,12 +34,16 @@ There is a [shell script file](src/pipeline.sh) that can be run to assemble MeTe
 In order to run the pipeline or assemble the network, certain files are needed. These are available as discussed [below](#raw-data-and-results). 
 ### Running the whole pipeline
 ```bash
-chmod +x ./pipeline.sh
-./pipeline.sh
+chmod +x ./run.sh
+./run.sh
 ```
-### Generating and characterizing the network
+### Generating and characterizing only the network
 ```bash
 python main.py
+```
+Because this downloads a lot of data, you can specify the storage directory for the PubMed XML.
+```bash
+python main.py --storagedir /path/tp
 ```
 ### Run the assessment part of the pipeline
 ```bash
@@ -68,5 +72,5 @@ Navigate to the directory you wish to download, either data or results, and use:
 dat clone ./
 ```
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbNjk2ODA4NDc2XX0=
+eyJoaXN0b3J5IjpbMjEwNjg3MjY3Ml19
 -->
