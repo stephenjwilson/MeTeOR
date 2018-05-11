@@ -76,7 +76,7 @@ sudo apt-get install -y nodejs
 
 To install dat:
 ```bash
-npm install -g dat
+sudo npm install -g dat
 ```
 ### Downloading with dat
 Navigate to the directory you wish to download, either data or results, and use:
@@ -84,6 +84,7 @@ Navigate to the directory you wish to download, either data or results, and use:
 dat clone ./
 ```
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbMTQ3MzU3NTExMSwtMTg2NzAzNjI2MSwtMj
-A5MTU0Mzc3MiwtMTkyNTkwMDc2NywtMTQ2NjYwNDk3MF19
+eyJoaXN0b3J5IjpbLTEyMzE3MjEzNjIsLTE4NjcwMzYyNjEsLT
+IwOTE1NDM3NzIsLTE5MjU5MDA3NjcsLTE0NjY2MDQ5NzBdfQ==
+
 -->
