@@ -26,6 +26,9 @@ Alternatively, you can download the results and use those for your project. This
  - [python3](https://www.python.org/downloads/release/python-360/)
  - [MATLAB](https://www.mathworks.com/products/matlab.html) (for prediction and network assessment)
  - [Graphviz](https://www.graphviz.org/) (for the network visualization)
+ - python3-dev
+ - npm
+ - dat
 
 [pyupset](https://github.com/ImSoErgodic/py-upset) is required, but a modified version is already provided in this repository.
 
@@ -77,6 +80,6 @@ Navigate to the directory you wish to download, either data or results, and use:
 dat clone ./
 ```
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTIwOTE1NDM3NzIsLTE5MjU5MDA3NjcsLT
-E0NjY2MDQ5NzBdfQ==
+eyJoaXN0b3J5IjpbMTQyMDAwNDUwLC0yMDkxNTQzNzcyLC0xOT
+I1OTAwNzY3LC0xNDY2NjA0OTcwXX0=
 -->
