@@ -2,6 +2,7 @@
 ## Contents
 
  - [Project Description](#project-description)
+ - [Webserver](#webserver)
  - [Running from Scratch](#running-from-scratch)
  - [Raw Data and Results](#raw-data-and-results)
 
@@ -11,7 +12,7 @@ The scientific literature is vast, and valuable information connecting findings 
 MeTeOR, or the MeSH Term Objective Reasoning network, mines the PubMed literature, revealing knowledge previously hidden in a sea of information. Given one biological entity (a gene, drug, or disease), it can give a ranked list of associations with other biological entities, and it can highlight papers pertaining to any two biological entities.
 
 This MeTeOR network was assembled with python 3 and it was assessed and predicted upon using MATLAB.
-
+## Webserver
 A website serving the resulting network can be found [here](http://meteor.lichtargelab.org/).
 
 ## Running from Scratch
@@ -76,6 +77,6 @@ dat clone ./
 ```
 from the directory of interest.
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTE5MjU5MDA3NjcsLTE0NjY2MDQ5NzBdfQ
-==
+eyJoaXN0b3J5IjpbLTE4MTE2OTYxNjMsLTE5MjU5MDA3NjcsLT
+E0NjY2MDQ5NzBdfQ==
 -->
