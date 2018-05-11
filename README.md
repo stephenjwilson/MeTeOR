@@ -29,7 +29,7 @@ Alternatively, you can download the results and use those for your project. This
 
 #### Time, space, and memory
 
- - PubMed Data:  This project runs on [the NLM bulk downloads](https://www.nlm.nih.gov/databases/download/pubmed_medline.html). The raw XML can take upwards of 280 GB of space. The pipeline can also be run off specific que
+ - PubMed Data:  This project runs on [the NLM bulk downloads](https://www.nlm.nih.gov/databases/download/pubmed_medline.html). The raw XML can take upwards of 280 GB of space. The pipeline can also be run off specific queries, as was done for the publication version of the code; however, this method takes a very long time to obtain data from PubMed, so please allow 2-3 days depending on download speeds. 
  - All code was run on an Intel® Core™ i7-4820K CPU @ 3.70GHz × 8 with 64 GB RAM. From start to finish, everything should complete within a week.
  - The Non-negative Matrix Factorization (NMF) conducted in the analysis part of the pipeline and run in MATLAB can be very time and memory intensive. If you chose to, you can download [pre-computed results](#raw-data-and-results) to greatly increase the speed of analysis.
 
@@ -76,5 +76,5 @@ dat clone ./
 ```
 from the directory of interest.
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTU2Mzc5NjUxMiwtMTQ2NjYwNDk3MF19
+eyJoaXN0b3J5IjpbMTI5NTIwMDAxLC0xNDY2NjA0OTcwXX0=
 -->
