@@ -60,8 +60,8 @@ python runEGFR.py
 The MeTeOR network can be download via the [results bulk download](http://static.lichtargelab.org/MeTeOR/results.tar.gz) or as [flat files](http://static.lichtargelab.org/MeTeOR/MeTeORFlatFiles.tar.gz). All downloads are available at [here](http://meteor.lichtargelab.org/download).
 
 For smooth integration into the git project, I also used [dat](https://datproject.org/). The run script automatically downloads the dat data for ease of use. See below for use of dat.
-### Installing Node and dat
-To download data using dat, ensure node (version  >= 4) is installed
+### Installing dat
+To download data using dat, ensure node (version  >= 4) is installed:
 ```bash
 node -v
 ```
@@ -71,13 +71,12 @@ To install dat:
 ```bash
 npm install -g dat
 ```
-### Downloading the data with dat
+### Downloading with dat
 Navigate to the directory you wish to download, either data or results, and use:
 ```bash
 dat clone ./
 ```
-from the directory of interest.
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbMTUyMjYwMjc2NywtMTkyNTkwMDc2NywtMT
-Q2NjYwNDk3MF19
+eyJoaXN0b3J5IjpbLTIwOTE1NDM3NzIsLTE5MjU5MDA3NjcsLT
+E0NjY2MDQ5NzBdfQ==
 -->
