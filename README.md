@@ -17,7 +17,7 @@ A website serving the resulting network can be found [here](http://meteor.lichta
 ## Running from Scratch
 There is a [shell script file](run.sh) that can be run to assemble MeTeOR and to assess the resulting network. This may be relevant if you wish to have the latest PubMed articles or if you wish to modify some aspect of the creation process. For example, you could create a custom weighting process or create a subnetwork based only on a certain part of the literature. 
 
-Alternatively, you can download the results and use those for your project. This can be done as described [below](#Raw-Data-and-Results):
+Alternatively, you can download the results and use those for your project. This can be done as described [below](#raw-data-and-results):
 
 ### Notes before running the pipeline
 #### Requirements
@@ -76,5 +76,5 @@ dat clone ./
 ```
 from the directory of interest.
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTEzOTQ2MjU3NTldfQ==
+eyJoaXN0b3J5IjpbLTExNDU5NjI2ODddfQ==
 -->
