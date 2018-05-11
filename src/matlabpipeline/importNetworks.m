@@ -13,9 +13,6 @@ function [ AllNetworks ] = importNetworks(AllNetworks, config)
         origfl=nm;
         nm=strsplit(nm,'/');
         flname=strrep(nm{end},'.txt','');
-        if ~contains(nm,'MeTeORgenegene')
-            continue
-        end
         if sum(ismember(fields(AllNetworks),flname))==0
             edgelist=parseNetwork(origfl);
             %% Add C,G,D labels for entitiies
@@ -33,6 +30,6 @@ function [ AllNetworks ] = importNetworks(AllNetworks, config)
             AllNetworks.(flname)={net,names,nm};
         end
     end
-    %save(strcat(netdir,'AllNetworks'),'AllNetworks','-v7.3')
+    save(strcat(netdir,'AllNetworks'),'AllNetworks','-v7.3')
 end
 

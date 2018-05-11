@@ -51,6 +51,7 @@ numpy == 1.14.2
 
 # processNetworks.py: 2
 obonet == 0.2.2
+mpmath == 1.0.0
 
 # EGFR/IPMS.py: 1
 # EGFR/assess_ranking.py: 8
@@ -73,6 +74,8 @@ scikit_learn == 0.18.2
 # geneMapping.py: 1
 # processNetworks.py: 5,191
 scipy == 0.19.1
+pygraphviz == 1.3.1
 
 # EGFR/utils.py: 4
 seaborn == 0.8.1
+click == 6.7

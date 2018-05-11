@@ -208,7 +208,7 @@ def getPmidUi(resultdir,datadir):
     nonInds=tmp.nonzero()[0]
     
     # Get all PMIDs
-    PMIDs=open('{}/EBVA.txt'.format(datadir)).read().split('\n')
+    PMIDs=open('{}/pmids.txt'.format(resultdir)).read().split('\n')
     PMIDs=np.array(PMIDs)
     # Subset PMIDs based on what is in pmidUi Matrix
     PMIDs=PMIDs[nonInds]

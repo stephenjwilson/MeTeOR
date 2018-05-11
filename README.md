@@ -45,7 +45,6 @@ dat clone ./
 ```
 ### Running the whole pipeline
 ```bash
-cd src
 chmod +x ./pipeline.sh
 ./pipeline.sh
 ```
@@ -79,12 +78,3 @@ Navigate to the directory you wish to download, either data or results, and use:
 ```bash
 dat clone ./
 ```
-<!--stackedit_data:
-eyJoaXN0b3J5IjpbMjA1NjYyNzU4NSw5MzI5NDE2ODMsOTgzOT
-IxMTIxLDE1NjE4MzMzMzYsODc5MjI1MDgyLC0xNTU5MDE2NzYy
-LC0zMTQyNTkzMjIsNTQ2MjU1MDE1LDEwNjIyNzA2MzEsNjcyOT
-UzMzk4LC0xMDAyNTE2NjU2LDExMjA1NDI0ODQsNTc0Mzg0OTIz
-LC0xMDA0OTQ4MjU3LDEwMDY5NTE4NjAsMTE1MTIwNjcxMiwtMT
-c0MzY1ODQyMiwxMjMxODgzODY3LC0xOTM2NDAwMjAxLC0xMTM1
-NjA0OTNdfQ==
--->
