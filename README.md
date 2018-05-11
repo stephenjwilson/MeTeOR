@@ -16,8 +16,6 @@ This MeTeOR network was assembled with python 3 and it was assessed and predicte
 ## Webserver
 A website serving the resulting network can be found [here](http://meteor.lichtargelab.org/).
 
-The MeTeOR network can be download via the [results bulk download](http://static.lichtargelab.org/MeTeOR/results.tar.gz) or as [flat files](http://static.lichtargelab.org/MeTeOR/MeTeORFlatFiles.tar.gz).
-
 ## Running from Scratch
 There is a [shell script file](run.sh) that can be run to assemble MeTeOR and to assess the resulting network. This may be relevant if you wish to have the latest PubMed articles or if you wish to modify some aspect of the creation process. For example, you could create a custom weighting process or create a subnetwork based only on a certain part of the literature. 
 
@@ -59,7 +57,9 @@ python runEGFR.py
 ```
 
 ## Download
-To host the data and results of the project, I used [dat](https://datproject.org/) and [bulk downloads](http://meteor.lichtargelab.org/download). Follow the link for the bulk downloads to get a compressed version of the network, results, or raw data. You can also use dat to download the raw data or results, as described below. The run script automatically downloads the dat data.
+The MeTeOR network can be download via the [results bulk download](http://static.lichtargelab.org/MeTeOR/results.tar.gz) or as [flat files](http://static.lichtargelab.org/MeTeOR/MeTeORFlatFiles.tar.gz). All downloads are available at http://meteor.lichtargelab.org/download).
+
+For smooth integration into the git, I also used [dat](https://datproject.org/) and [bulk downloads](http://meteor.lichtargelab.org/download). Follow the link for the bulk downloads to get a compressed version of the network, results, or raw data. You can also use dat to download the raw data or results, as described below. The run script automatically downloads the dat data.
 ### Installing Node and dat
 To download data using dat, ensure node (version  >= 4) is installed
 ```bash
@@ -78,6 +78,6 @@ dat clone ./
 ```
 from the directory of interest.
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTk3MDQwNzI4LC0xOTI1OTAwNzY3LC0xND
-Y2NjA0OTcwXX0=
+eyJoaXN0b3J5IjpbMTQ3Mjk3OTQyMSwtMTkyNTkwMDc2NywtMT
+Q2NjYwNDk3MF19
 -->
