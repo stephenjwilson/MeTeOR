@@ -57,7 +57,7 @@ python runEGFR.py
 ```
 
 ## Raw Data and Results
-To host the data and results of the project, I used [dat](https://datproject.org/) and [bulk downloads](http://meteor.lichtargelab.org/download). Follow the link for the bulk downloads to get a compressed version of the network, results, or raw data. 
+To host the data and results of the project, I used [dat](https://datproject.org/) and [bulk downloads](http://meteor.lichtargelab.org/download). Follow the link for the bulk downloads to get a compressed version of the network, results, or raw data. You can also use dat to download the raw data or results, as described below. The run script automatically downloads the dat data.
 ### Installing Node and dat
 To download data using dat, ensure node (version  >= 4) is installed
 ```bash
@@ -76,5 +76,5 @@ dat clone ./
 ```
 from the directory of interest.
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTI4NDIwNjI0MF19
+eyJoaXN0b3J5IjpbLTE0NjY2MDQ5NzBdfQ==
 -->
