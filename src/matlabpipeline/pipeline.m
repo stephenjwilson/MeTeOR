@@ -117,7 +117,7 @@ for i=1:rep
     Names{i}=Names1;
 end
 mrr=MRR(mats,find(strcmp(Names{1},entity)));
-references={AllNetworks.BIOGRIDLow,AllNetworks.MSigDBCurated_top,AllNetworks.STRING10_textmining,AllNetworks.EVEX};
+references={AllNetworks.BIOGRIDLow,AllNetworks.MSigDBCurated_top_cp,AllNetworks.STRING10_textmining,AllNetworks.EVEX};
 Tests={AllNetworks.MeTeORgenegene,{mrr,Names{1}}};
 SingleEntityExtraction(Tests,references,entity,k,strcat('../',YamlStruct.general.resultsdir));
 

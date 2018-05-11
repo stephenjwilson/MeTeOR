@@ -1,6 +1,7 @@
 ### Imports ###
-import os
+import os,glob
 import matplotlib
+matplotlib.use('Agg')
 import pickle
 import numpy as np
 from IPython import embed
@@ -47,7 +48,9 @@ def run(datadir,resultdir,gene):
     titles=[]
     
     # Get MeTeOR output
-    nets, labels = process_MeTeOR_OUTPUT('%s/validation/mrr300_MeTeOR%s.txt' %(resultdir,'G'+gene)) # need to replace k automatically
+    # Find File
+    fls=glob.glob('%s/validation/mrr*_MeTeOR%s.txt' %(resultdir,'G'+gene))
+    nets, labels = process_MeTeOR_OUTPUT(fls[0])
     part1, part2 = zip(*nets)
     ls[0] += part1
     ls[1] += part2

@@ -10,7 +10,7 @@ fi
 
 cd src
 # Run the python part of the pipeline, generating and characterizing the network
-python main.py --storagedir /mammothshared/ProjectStructures/MeTeOR/MEDLINE
+python main.py --storagedir /lab/mammoth/shared/ProjectStructures/MeTeOR/MEDLINE/
 
 file='../results/pmid_ui.npz'
 if [ ! -e "$file" ]; then
@@ -23,7 +23,7 @@ fi
 cd matlabpipeline
 matlab -r pipeline
 
-file='../results/validation/mmr300_MeTeOR1956.txt'
+file='../results/validation/Fig2/overlaps/MeTeORoverlaps.txt'
 if [ ! -e "$file" ]; then
     echo "MATLAB pipeline failed"
     exit 1
