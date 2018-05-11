@@ -15,7 +15,7 @@ This MeTeOR network was assembled with python 3 and it was assessed and predicte
 
 ## Webserver
 A website serving the resulting network can be found [here](http://meteor.lichtargelab.org/).
-The MeTeOR network can be download via the [results bulk download])(http://static.lichtargelab.org/MeTeOR/results.tar.gz) or as [flat files]().
+The MeTeOR network can be download via the [results bulk download](http://static.lichtargelab.org/MeTeOR/results.tar.gz) or as [flat files](http://static.lichtargelab.org/MeTeOR/MeTeORFlatFiles.tar.gz).
 
 ## Running from Scratch
 There is a [shell script file](run.sh) that can be run to assemble MeTeOR and to assess the resulting network. This may be relevant if you wish to have the latest PubMed articles or if you wish to modify some aspect of the creation process. For example, you could create a custom weighting process or create a subnetwork based only on a certain part of the literature. 
@@ -77,6 +77,6 @@ dat clone ./
 ```
 from the directory of interest.
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTIwOTcxMDMxNzQsLTE5MjU5MDA3NjcsLT
-E0NjY2MDQ5NzBdfQ==
+eyJoaXN0b3J5IjpbMTM5Njg1Mzc5NywtMTkyNTkwMDc2NywtMT
+Q2NjYwNDk3MF19
 -->
