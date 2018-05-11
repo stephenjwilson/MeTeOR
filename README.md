@@ -4,7 +4,7 @@
  - [Project Description](#project-description)
  - [Webserver](#webserver)
  - [Running from Scratch](#running-from-scratch)
- - [Raw Data and Results](#raw-data-and-results)
+ - [Download Data and Results](#download)
 
 ## Project Description
 The scientific literature is vast, and valuable information connecting findings from disparate works is easily missed. Teams of collaborators address this problem up to a point but could still benefit from systematic “big data” approaches that mine the entire literature to generate testable hypotheses on a large scale.
@@ -58,7 +58,7 @@ cd ../EGFR
 python runEGFR.py
 ```
 
-## Raw Data and Results
+## Download
 To host the data and results of the project, I used [dat](https://datproject.org/) and [bulk downloads](http://meteor.lichtargelab.org/download). Follow the link for the bulk downloads to get a compressed version of the network, results, or raw data. You can also use dat to download the raw data or results, as described below. The run script automatically downloads the dat data.
 ### Installing Node and dat
 To download data using dat, ensure node (version  >= 4) is installed
@@ -78,6 +78,6 @@ dat clone ./
 ```
 from the directory of interest.
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTE3NDA0MTMzMjEsLTE5MjU5MDA3NjcsLT
-E0NjY2MDQ5NzBdfQ==
+eyJoaXN0b3J5IjpbLTk3MDQwNzI4LC0xOTI1OTAwNzY3LC0xND
+Y2NjA0OTcwXX0=
 -->
