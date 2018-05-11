@@ -27,8 +27,8 @@ Alternatively, you can download the results and use those for your project. This
  - [MATLAB](https://www.mathworks.com/products/matlab.html) (for prediction and network assessment)
  - [Graphviz](https://www.graphviz.org/) (for the network visualization)
  - python3-dev
- - npm
- - dat
+ - [npm](#installing-dat)
+ - [dat](#installing-dat)
 
 [pyupset](https://github.com/ImSoErgodic/py-upset) is required, but a modified version is already provided in this repository.
 
@@ -80,6 +80,6 @@ Navigate to the directory you wish to download, either data or results, and use:
 dat clone ./
 ```
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbMTQyMDAwNDUwLC0yMDkxNTQzNzcyLC0xOT
-I1OTAwNzY3LC0xNDY2NjA0OTcwXX0=
+eyJoaXN0b3J5IjpbLTQyNjgyOTQyNiwtMjA5MTU0Mzc3MiwtMT
+kyNTkwMDc2NywtMTQ2NjYwNDk3MF19
 -->
