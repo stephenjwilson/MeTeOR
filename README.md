@@ -12,8 +12,10 @@ The scientific literature is vast, and valuable information connecting findings 
 MeTeOR, or the MeSH Term Objective Reasoning network, mines the PubMed literature, revealing knowledge previously hidden in a sea of information. Given one biological entity (a gene, drug, or disease), it can give a ranked list of associations with other biological entities, and it can highlight papers pertaining to any two biological entities.
 
 This MeTeOR network was assembled with python 3 and it was assessed and predicted upon using MATLAB.
+
 ## Webserver
 A website serving the resulting network can be found [here](http://meteor.lichtargelab.org/).
+The MeTeOR network can be download 
 
 ## Running from Scratch
 There is a [shell script file](run.sh) that can be run to assemble MeTeOR and to assess the resulting network. This may be relevant if you wish to have the latest PubMed articles or if you wish to modify some aspect of the creation process. For example, you could create a custom weighting process or create a subnetwork based only on a certain part of the literature. 
@@ -34,8 +36,6 @@ Alternatively, you can download the results and use those for your project. This
  - All code was run on an Intel® Core™ i7-4820K CPU @ 3.70GHz × 8 with 64 GB RAM. From start to finish, everything should complete a day for bulk downloads or within a week otherwise.
  - The Non-negative Matrix Factorization (NMF) conducted in the analysis part of the pipeline and run in MATLAB can be very time and memory intensive. If you chose to, you can download [pre-computed results](#raw-data-and-results) to greatly increase the speed of analysis.
 
-#### Obtaining the data
-In order to run the pipeline or assemble the network, certain files are needed. These are available as discussed [below](#raw-data-and-results). 
 ### Running the whole pipeline
 ```bash
 chmod +x ./run.sh
@@ -77,6 +77,6 @@ dat clone ./
 ```
 from the directory of interest.
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTE4MTE2OTYxNjMsLTE5MjU5MDA3NjcsLT
-E0NjY2MDQ5NzBdfQ==
+eyJoaXN0b3J5IjpbNjQyODEzNDE3LC0xOTI1OTAwNzY3LC0xND
+Y2NjA0OTcwXX0=
 -->
