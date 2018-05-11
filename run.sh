@@ -1,5 +1,12 @@
-
-# Check for the data
+# set-up the environment if needed
+DIRECTORY='meteor_env'
+if [ ! -d "$DIRECTORY" ]; then
+    echo "Making the python environment"
+    virtualenv -p python3 meteor_env
+    source meteor_env/bin/activate
+    pip install -r src/requirements.txt #Check for the data
+fi
+exit
 file='./data/c2018.bin'
 if [ ! -e "$file" ]; then
     echo "Please Download the raw data need to run the code"
@@ -10,7 +17,7 @@ fi
 
 cd src
 # Run the python part of the pipeline, generating and characterizing the network
-python main.py --storagedir /lab/mammoth/shared/ProjectStructures/MeTeOR/MEDLINE/
+python main.py
 
 file='../results/pmid_ui.npz'
 if [ ! -e "$file" ]; then
