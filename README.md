@@ -78,3 +78,6 @@ Navigate to the directory you wish to download, either data or results, and use:
 ```bash
 dat clone ./
 ```
+<!--stackedit_data:
+eyJoaXN0b3J5IjpbLTkwNzkzNzY0MF19
+-->
