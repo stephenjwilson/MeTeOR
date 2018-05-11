@@ -18,14 +18,7 @@ A website serving the resulting network can be found [here](http://meteor.lichta
 There is a [shell script file](src/pipeline.sh) that can be run to assemble MeTeOR and to assess the resulting network. This may be relevant if you wish to have the latest PubMed articles or if you wish to modify some aspect of the creation process. For example, you could create a custom weighting process or create a subnetwork based only on a certain part of the literature. 
 ### Notes before running the pipeline
 #### Requirements
-For the python portion:
-```bash
-virtualenv -p python3 meteor_env
-source meteor_env/bin/activate
-pip install -r src/requirements.txt
-```
-Other requirements:
-
+ - [python3](https://www.python.org/downloads/release/python-360/)
  - [MATLAB](https://www.mathworks.com/products/matlab.html) (for prediction and network assessment)
  - [Graphviz](https://www.graphviz.org/) (for the network visualization)
 
@@ -38,11 +31,7 @@ Other requirements:
  - The Non-negative Matrix Factorization (NMF) conducted in the analysis part of the pipeline and run in MATLAB can be very time and memory intensive. If you chose to, you can download [pre-computed results](#raw-data-and-results) to greatly increase the speed of analysis.
 
 #### Obtaining the data
-In order to run the pipeline or assemble the network, certain files are needed. These are available as discussed [below](#raw-data-and-results). In short:
-```bash
-cd data
-dat clone ./
-```
+In order to run the pipeline or assemble the network, certain files are needed. These are available as discussed [below](#raw-data-and-results). 
 ### Running the whole pipeline
 ```bash
 chmod +x ./pipeline.sh
@@ -79,5 +68,5 @@ Navigate to the directory you wish to download, either data or results, and use:
 dat clone ./
 ```
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTkwNzkzNzY0MF19
+eyJoaXN0b3J5IjpbNjk2ODA4NDc2XX0=
 -->
