@@ -26,6 +26,10 @@ Alternatively, you can download the results and use those for your project. This
  - [python3](https://www.python.org/downloads/release/python-360/)
  - [MATLAB](https://www.mathworks.com/products/matlab.html) (for prediction and network assessment)
  - [Graphviz](https://www.graphviz.org/) (for the network visualization)
+ - python3-dev([Ex.](https://packages.ubuntu.com/search?keywords=python3-dev))
+ - python3-tk
+ - [npm](#installing-dat)
+ - [dat](#installing-dat)
 
 [pyupset](https://github.com/ImSoErgodic/py-upset) is required, but a modified version is already provided in this repository.
 
@@ -65,11 +69,15 @@ To download data using dat, ensure node (version  >= 4) is installed:
 ```bash
 node -v
 ```
-If it needs to be installed. go to their [website](https://nodejs.org/en/download/).
+If it needs to be installed. go to their [website](https://nodejs.org/en/download/). or:
+```bash
+curl -sL https://deb.nodesource.com/setup_10.x | sudo -E bash -
+sudo apt-get install -y nodejs
+```
 
 To install dat:
 ```bash
-npm install -g dat
+sudo npm install -g dat
 ```
 ### Downloading with dat
 Navigate to the directory you wish to download, either data or results, and use:
@@ -77,6 +85,7 @@ Navigate to the directory you wish to download, either data or results, and use:
 dat clone ./
 ```
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTIwOTE1NDM3NzIsLTE5MjU5MDA3NjcsLT
-E0NjY2MDQ5NzBdfQ==
+eyJoaXN0b3J5IjpbLTE1ODE4MTE5NjQsLTE4NjcwMzYyNjEsLT
+IwOTE1NDM3NzIsLTE5MjU5MDA3NjcsLTE0NjY2MDQ5NzBdfQ==
+
 -->
