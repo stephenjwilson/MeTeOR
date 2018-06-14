@@ -17,7 +17,7 @@ from _operator import itemgetter
 #from lxml.html import soupparser
 #import lxml.etree as etree
 
-
+from IPython import embed
     
 def main(datadir='../data',storagedir='../MEDLINE',resultdir='.',verbose=1):
     '''
@@ -195,6 +195,7 @@ def runCrawl(datadir='../data',storagedir='../MEDLINE',resultdir='.',verbose=1):
     OUT=open('{}/pmids.txt'.format(resultdir),'w')
     currentPMIDs=np.empty(shape=(len(enumpmid.keys()),1))
     for pmid, ind in enumpmid.items():
+        pmid=pmid.replace('\x00','')
         currentPMIDs[ind]=pmid
     for i in range(0,len(currentPMIDs)):
         OUT.write('{}\n'.format(int(currentPMIDs[i][0])))

@@ -91,6 +91,7 @@ def parse(infl,enumpmid,enumui,uis,meta,recover=False):
     currentPMID=len(enumpmid.keys())
     for _,elem in context:
         pmid= elem.find('MedlineCitation').find('PMID').text # First PMID is the right one
+        pmid=re.sub(r'[^\x00-\x7f]',r'', pmid)
         if pmid==None or pmid=='':
             miss+=1
             continue

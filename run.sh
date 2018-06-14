@@ -5,14 +5,17 @@ if [ ! -d "$DIRECTORY" ]; then
     virtualenv -p python3 meteor_env
     source meteor_env/bin/activate
     pip install -r src/requirements.txt #Check for the data
+else
+    source meteor_env/bin/activate
 fi
-exit
+
 file='./data/c2018.bin'
 if [ ! -e "$file" ]; then
     echo "Please Download the raw data need to run the code"
     echo "Attempting to download now..."
     cd data
-    dat clone
+    dat clone ./
+    cd ../
 fi 
 
 cd src
