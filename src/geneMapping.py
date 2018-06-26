@@ -208,7 +208,7 @@ def getPmidUi(resultdir,datadir):
     nonInds=tmp.nonzero()[0]
     
     # Get all PMIDs
-    PMIDs=open('{}/pmids.txt'.format(resultdir)).read().split('\n')
+    PMIDs=[line.strip().split('\t')[0] for line in open('{}/pmids.txt'.format(resultdir)).readlines()]
     PMIDs=np.array(PMIDs)
     # Subset PMIDs based on what is in pmidUi Matrix
     PMIDs=PMIDs[nonInds]
