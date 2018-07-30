@@ -4,12 +4,6 @@ function [BAUCs,BPR,BPR5,BF1,BF15 ] = GSretro( oldNames1,oldNames2,predNetwork,p
 %   All names are cell arrays of strings
 %   All networks are matricies
 
-BAUCs=zeros(1000,1);
-BPR=zeros(1000,1);
-BPR5=zeros(1000,1);
-BF1=zeros(1000,1);
-BF15=zeros(1000,1);
-
 %% Figure out mapping to a common set of the first dimension
 commonNames1=predNames1(ismember(predNames1,GSoldNames1));
 commonNames1(strcmp(commonNames1,''))=[];
@@ -66,7 +60,8 @@ predNetwork(mask)=-1;
 clear mask;
 positives=and(predNetwork>0,GSnewNetwork>0);
 negatives=and(predNetwork>0,GSnewNetwork==0);
-
+auc_alt = alt_auc(predNetwork,GSnewNetwork,root,10000);
+fprintf('Alt AUC: %f\n',auc_alt);
 %% Bootstrap
 [aucs,PRs,PR5s,F1s,F15s ]=bootstrapComparison(predNetwork,GSnewNetwork,strcat(root,'/BoxPlot/'),title);
 
@@ -77,8 +72,8 @@ BF1=F1s;
 BF15=F15s;
 
 %% Continue with other ROC / PR
-disp(sprintf('Positives: %f',nnz(positives)));
-disp(sprintf('Negatives: %f',nnz(negatives)));
+fprintf('Positives: %f\n',nnz(positives));
+fprintf('Negatives: %f\n',nnz(negatives));
 
 if length(GSoldNames1)==length(GSoldNames2)
     if sum(~strcmp(GSoldNames1,GSoldNames2))==0 %%%%%
@@ -86,6 +81,39 @@ if length(GSoldNames1)==length(GSoldNames2)
         negatives=tril(negatives);
     end
 end
+rankpos = predNetwork(positives);
+rankneg = predNetwork(negatives);
+ranking=[rankpos;rankneg];
+classes=[ones(length(rankpos),1); zeros(length(rankneg),1)];
+%% Get ROC curve
+[x_ROC,y_ROC,~,auc_ROC]=perfcurve(classes,ranking,1);
+disp(auc_ROC)
+
+%% Reduce dimensionality if needed
+if length(x_ROC)>1000
+    x_ROC=reduceVector(x_ROC,1000);
+    y_ROC=reduceVector(y_ROC,1000);
+else
+    x_ROC(end:1000)=1;
+    y_ROC(end:1000)=1;
+end
+
+
+%% Precision recall curves
+[x_precRecall,y_precRecall,~,~]=perfcurve(classes,ranking, 1, 'XCrit','TPR','YCrit','PPV');
+
+if length(x_precRecall)>1000
+    x_precRecall=reduceVector(x_precRecall,1000);
+    y_precRecall=reduceVector(y_precRecall,1000);
+else
+    x_precRecall(end:1000)=x_precRecall(end);
+    y_precRecall(end:1000)=y_precRecall(end);
+end
+
+%plot curves
+plot_perfcurve(x_ROC,y_ROC,{sprintf('%s AUC=%0.2f',title, auc_ROC)},0,title,root);
+plot_perfcurve(x_precRecall,y_precRecall,{title},1,title,root);
+
 
 %% Output top predictions
 pr=predNetwork(positives);
@@ -105,6 +133,8 @@ plotBoxPlot(BPR,s2,strcat(title,'PR1'),boxroot);
 plotBoxPlot(BPR5,s2,strcat(title,'PR5'),boxroot);
 plotBoxPlot(BF1,s2,strcat(title,'F11'),boxroot);
 plotBoxPlot(BF15,s2,strcat(title,'F15'),boxroot);
+
+save(sprintf('GSRetro_%s.mat', title),'BAUCs','BPR','BPR5','BF1','BF15','x_ROC','y_ROC','x_precRecall', 'y_precRecall','auc_alt')
 
 end
 
