@@ -26,7 +26,11 @@ Names1=data{2};
 
 %% Start or load NMF
 try
-    load(sprintf('%sMeTeOR%sFact%s%s%s',root,num2str(k),num2str(trimfactor),NetName,iter));
+    if ~contains(NetName,'MRCOC')
+        load(sprintf('%sMeTeOR%sFact%s%s%s',root,num2str(k),num2str(trimfactor),NetName,iter));
+    else
+        load(sprintf('%s%sFact%s%s%s',root,num2str(k),num2str(trimfactor),NetName,iter));
+    end
     %result=sparse(result);
     %save(sprintf('MeTeOR%sFact%s%s_fast',num2str(k),num2str(trimfactor),NetName),'result','Names1','-v7.3');
     disp('Loaded from file');
@@ -36,19 +40,21 @@ catch
     %seed = 1;
     %n = 10;
     %% Trim Network
-    Names3=cellfun(@(x) x(2)=='.',Names1);
-    Names1=Names1(Names3);
-    Network=Network(Names3,Names3);
+    if ~contains(NetName,'MRCOC')
+        Names3=cellfun(@(x) x(2)=='.',Names1);
+        Names1=Names1(Names3);
+        Network=Network(Names3,Names3);
+    end
     
     % Trim by number of associations
-    s1=sum(Network,1);
+    s1=sum(Network>0,1);
     Names1=Names1(s1>trimfactor);
     Network=Network(s1>trimfactor,s1>trimfactor);
     while sum(s1<trimfactor)>0
-        s1=sum(Network,1);
+        s1=sum(Network>0,1);
         Names1=Names1(s1>trimfactor);
         Network=Network(s1>trimfactor,s1>trimfactor);
-        s1=sum(Network,1);
+        s1=sum(Network>0,1);
     end
     %% Start NMF
     opt = statset('MaxIter',5,'Display','final');%'Streams',RandStream.create('mrg32k3a','NumStreams',n,'Seed',seed),'UseSubstreams',true);
@@ -61,7 +67,11 @@ catch
     result=(result+result')/2;
     result(result<.1)=0;
     result=sparse(result);
-    save(sprintf('%sMeTeOR%sFact%s%s%s',root,num2str(k),num2str(trimfactor),NetName,iter),'result','Names1','-v7.3');
+    if ~contains(NetName,'MRCOC')
+        save(sprintf('%sMeTeOR%sFact%s%s%s',root,num2str(k),num2str(trimfactor),NetName,iter),'result','Names1','-v7.3');
+    else
+        save(sprintf('%s%sFact%s%s%s',root,num2str(k),num2str(trimfactor),NetName,iter),'result','Names1','-v7.3');
+    end
     clear('w','h');
 end
 end

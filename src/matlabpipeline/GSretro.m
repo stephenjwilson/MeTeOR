@@ -60,7 +60,7 @@ predNetwork(mask)=-1;
 clear mask;
 positives=and(predNetwork>0,GSnewNetwork>0);
 negatives=and(predNetwork>0,GSnewNetwork==0);
-auc_alt = alt_auc(predNetwork,GSnewNetwork,root,10000);
+auc_alt = alt_auc(predNetwork,GSnewNetwork,10000);
 fprintf('Alt AUC: %f\n',auc_alt);
 %% Bootstrap
 [aucs,PRs,PR5s,F1s,F15s ]=bootstrapComparison(predNetwork,GSnewNetwork,strcat(root,'/BoxPlot/'),title);

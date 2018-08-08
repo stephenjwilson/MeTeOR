@@ -106,7 +106,7 @@ writeMatnoMod(strcat(fl,'PR5s'),aps,BPR5);
 
 %% Calculate then export EGFR data
 % EGFR is 'G.1956' in the mapping
-entity='G.1956';
+%entity='G.1956';
 rep=5;
 mats={};
 Names={};
@@ -116,14 +116,15 @@ for i=1:rep
     mats{i}=result;
     Names{i}=Names1;
 end
-mrr=MRR(mats,find(strcmp(Names{1},entity)));
-references={AllNetworks.BIOGRIDLow,AllNetworks.MSigDBCurated_top_all,AllNetworks.STRING10_textmining,AllNetworks.EVEX};
-Tests={AllNetworks.MeTeORgenegene,{mrr,Names{1}}};
-SingleEntityExtraction(Tests,references,entity,k,strcat('../',YamlStruct.general.resultsdir));
 
-% Calculate EGFR for CN and AA
-[CN,AA]=naivePrediction('MeTeORgenegene',AllNetworks);
-Tests={AllNetworks.MeTeORgenegene,{CN,Names{1}},{AA,Names{1}}};
-SingleEntityExtractionNaive(Tests,references,entity,k,strcat('../',YamlStruct.general.resultsdir));
+% Output
+references={AllNetworks.BIOGRIDLow,AllNetworks.MSigDBCurated_top_cp,AllNetworks.STRING10_textmining,AllNetworks.EVEX};
+meteor = {AllNetworks.MeTeORgenegene,{mats,Names{1}}};
+Tests={{CN,Names{1}},{AA,Names{1}}};
+SingleEntityExtraction(meteor,Tests,references,k,strcat('../',YamlStruct.general.resultsdir));
+% Calculate for CN and AA
+% [CN,AA]=naivePrediction('MeTeORgenegene',AllNetworks);
+% Tests={AllNetworks.MeTeORgenegene,{CN,Names{1}},{AA,Names{1}}};
+% SingleEntityExtractionNaive(Tests,references,strcat('../',YamlStruct.general.resultsdir));
 
 exit();

@@ -1,21 +1,22 @@
-function [ auc ] = alt_auc( Testnetwork,GS,root,n )
+function [ auc ] = alt_auc( Testnetwork,GS,n )
 %alt_auc Completes an alternative assessment of auc of the network to a ground truth. 
 %   Testnetwork is a network that is being assessed (must be mapped to GS!)
 %   GS is a gold standard network (must be mapped to testnetwork!)
 if nargin<4
     n=10000; 
 end
+[w,h]=size(GS);
+if w==1 || h==1
+    positives=and(Testnetwork>0,(GS>0)');
+    negatives=and(Testnetwork>0,(GS==0)');
+else
+    positives=and(Testnetwork>0,GS>0);
+    negatives=and(Testnetwork>0,GS==0);
 
-if ~exist(root, 'dir')
-  mkdir(root);
+    % Eliminate Duplicates
+    positives=tril(positives);
+    negatives=tril(negatives);
 end
-
-positives=and(Testnetwork>0,GS>0);
-negatives=and(Testnetwork>0,GS==0);
-
-% Eliminate Duplicates
-positives=tril(positives);
-negatives=tril(negatives);
 % Get Scores
 positive_scores = nonzeros(Testnetwork(positives));
 negative_scores = nonzeros(Testnetwork(negatives));
