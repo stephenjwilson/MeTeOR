@@ -14,15 +14,15 @@ newNetwork=newdata{1};
 newNames=newdata{2};
 
 %disp('NMF');
-%[result,predNames]=getNMFresult(TestOldNetName,k,AllNetworks,root);
+[result,predNames]=getNMFresult(TestOldNetName,k,AllNetworks,root);
 
-%[NMF_auc]=GSretro_FastAlt(oldNames,oldNetwork, newNetwork, newNames, result,predNames);
+[NMF_auc]=GSretro_FastAlt(oldNames,oldNetwork, newNetwork, newNames, result,predNames);
 
 % run CN and AA
 [CN,AA]=naivePrediction(TestOldNetName,AllNetworks);
 disp('CN');
-[CN_auc]=GSretro_FastAlt(oldNames,oldNetwork, newNetwork, newNames, CN,predNames);
+[CN_auc]=GSretro_FastAlt(oldNames,oldNetwork, newNetwork, newNames, CN,oldNames);
 disp('AA');
-[AA_auc]=GSretro_FastAlt(oldNames,oldNetwork, newNetwork, newNames, AA,predNames);
+[AA_auc]=GSretro_FastAlt(oldNames,oldNetwork, newNetwork, newNames, AA,oldNames);
 disp('');
 end

@@ -42,15 +42,15 @@ end
 
 %% Self-retrospective - High Memory Requirements if computing NMF predictions from scratch
 
-aucs1=runGSretro_alt('MeTeORgenegene','MeTeORgenegene_2014',AllNetworks, resultdir,bestks{1});
-aucs2=runGSretro_alt('MeTeORdiseasegene','MeTeORdiseasegene_2014',AllNetworks, resultdir,bestks{2});
-aucs3=runGSretro_alt('MeTeORgenechemical','MeTeORgenechemical_2014',AllNetworks, resultdir,bestks{3});
+[aucs1, aucsCN1, aucsAA1] = runGSretro_alt('MeTeORgenegene','MeTeORgenegene_2014',AllNetworks, resultdir,bestks{1});
+[aucs2, aucsCN2, aucsAA2] = runGSretro_alt('MeTeORdiseasegene','MeTeORdiseasegene_2014',AllNetworks, resultdir,bestks{2});
+[aucs3, aucsCN3, aucsAA3] = runGSretro_alt('MeTeORgenechemical','MeTeORgenechemical_2014',AllNetworks, resultdir,bestks{3});
 
 
 %% Self-retrospective - MRCOC
 if ~exist('MRCOC','var')
-    MRCOC = load('MRCOC_2018.mat');
+    MRCOC = load(strcat('../',YamlStruct.general.networkdir,'MRCOC_2018.mat'));
     MRCOC.MRCOC_2015{2} = cellstr(MRCOC.MRCOC_2015{2});
     MRCOC.MRCOC_2018{2} = cellstr(MRCOC.MRCOC_2018{2});
 end
-aucs4=runGSretro_alt('MRCOC_2018','MRCOC_2015',MRCOC, resultdir,bestks{1});
+[aucs4, aucsCN4, aucsAA4] = runGSretro_alt('MRCOC_2018','MRCOC_2015',MRCOC, resultdir,bestks{1});

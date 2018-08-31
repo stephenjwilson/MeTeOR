@@ -116,6 +116,7 @@ for i=1:rep
     mats{i}=result;
     Names{i}=Names1;
 end
+[CN,AA]=naivePrediction('MeTeORgenegene',AllNetworks);
 
 % Output
 references={AllNetworks.BIOGRIDLow,AllNetworks.MSigDBCurated_top_cp,AllNetworks.STRING10_textmining,AllNetworks.EVEX};
@@ -123,7 +124,7 @@ meteor = {AllNetworks.MeTeORgenegene,{mats,Names{1}}};
 Tests={{CN,Names{1}},{AA,Names{1}}};
 SingleEntityExtraction(meteor,Tests,references,k,strcat('../',YamlStruct.general.resultsdir));
 % Calculate for CN and AA
-% [CN,AA]=naivePrediction('MeTeORgenegene',AllNetworks);
+
 % Tests={AllNetworks.MeTeORgenegene,{CN,Names{1}},{AA,Names{1}}};
 % SingleEntityExtractionNaive(Tests,references,strcat('../',YamlStruct.general.resultsdir));
 

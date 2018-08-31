@@ -35,7 +35,7 @@ def main(storagedir,datadir,resultdir,downloadbulk,searchterm):
         downloadPubMed.downloadAll(storagedir=storagedir,searchterm=searchterm)
     
     # Crawl Downloaded files and make co-occurrence matrix
-    crawlPubMedFiles.main(datadir, storagedir, resultdir)
+    #crawlPubMedFiles.main(datadir, storagedir, resultdir)
     
     # Produce networks
     processNetworks.main(datadir=datadir,resultdir=resultdir)
